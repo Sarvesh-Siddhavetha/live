@@ -1,0 +1,58 @@
+<app-hero
+
+category="Sustainable Living"
+
+title="A cleaner home. A kinder planet."
+
+description="Herbal home care, culinary medicine, and organic everyday essentials — wellness that extends beyond the body."
+
+buttonText="Shop the Home"
+
+image="assets/images/shop/Sustainable-living-hero.png">
+
+</app-hero>
+
+<app-chips
+
+[chips]="categories">
+
+</app-chips>
+
+<section class="products">
+
+    <div class="section-label">
+
+        [LEAD PRODUCTS]
+
+    </div>
+
+    <div class="product-grid">
+
+        <app-product-card
+        category="NATURAL CLEANER"
+    title="Botanical Home Spray"
+    description="A powerful plant-based cleaning spray infused with natural botanical extracts to keep every surface spotless, fresh, and safe for your family and the environment."
+    price="₹499"
+    image="assets/images/shop/Sustainable-living1.png">></app-product-card>
+
+        <app-product-card category="ZERO WASTE"
+    title="Eco Kitchen Essentials"
+    description="A thoughtfully curated collection of reusable kitchen essentials designed to replace disposable plastics while bringing sustainability and elegance into your everyday routine."
+    price="₹899"
+    image="assets/images/shop/Sustainable-living2.png">></app-product-card>
+
+        <app-product-card
+        category="BAMBOO LIVING"
+    title="Sustainable Starter Kit"
+    description="A premium bamboo essentials kit featuring biodegradable everyday products that combine timeless craftsmanship with environmentally conscious living."
+    price="₹699"
+    image="assets/images/shop/Sustainable-living3.png"></app-product-card>
+
+    </div>
+
+    <app-button
+        label="Shop Sustainable Living"
+        variant="dark">
+    </app-button>
+
+</section>

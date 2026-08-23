@@ -1,0 +1,157 @@
+<!-- Claude (Anthropic): substantially modified this file — Siddhavetha EY-style rebuild -->
+<nav class="navbar" [class.is-scrolled]="scrolled()">
+
+    <a routerLink="/home" class="logo" (click)="closeMega()">
+
+        <img src="assets/images/logo/logo.png" alt="Siddhavetha Global Innovations" width="42" height="42">
+
+        <div class="logo-text">
+            <span class="company-name">SIDDHAVETHA</span>
+            <span class="company-tagline">Global Innovations</span>
+        </div>
+
+    </a>
+
+    <ul class="nav-links">
+
+        <li>
+            <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                Home
+            </a>
+        </li>
+
+        <li
+            class="has-mega"
+            [class.open]="megaOpen()">
+
+            <button
+                type="button"
+                class="mega-trigger"
+                (click)="toggleMega()"
+                [attr.aria-expanded]="megaOpen()">
+                What We Do
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" class="chevron">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+        </li>
+
+        <li>
+            <a routerLink="/our-story" routerLinkActive="active">
+                Our Story
+            </a>
+        </li>
+
+        <li>
+            <a routerLink="/partner-invest" routerLinkActive="active">
+                Partner &amp; Invest
+            </a>
+        </li>
+
+        <li>
+            <a routerLink="/about" routerLinkActive="active">
+                About
+            </a>
+        </li>
+
+    </ul>
+
+    <div class="nav-buttons">
+
+        <a routerLink="/contact" class="contact-link">Contact</a>
+
+        <app-button
+            label="Enquire Now"
+            variant="header">
+        </app-button>
+
+    </div>
+
+    <button
+        type="button"
+        class="mobile-toggle"
+        (click)="toggleMobile()"
+        [attr.aria-expanded]="mobileOpen()"
+        aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- MEGA MENU -->
+
+    <div class="mega-panel" [class.open]="megaOpen()">
+
+        <div class="mega-inner">
+
+            <div class="mega-col">
+
+                <p class="mega-title">Consumer &amp; Marketplace</p>
+
+                <a routerLink="/consumer-wellness" (click)="closeMega()">Consumer Wellness</a>
+                <a routerLink="/personal-care" (click)="closeMega()">Personal Care &amp; Beauty</a>
+                <a routerLink="/sustainable-living" (click)="closeMega()">Sustainable Living</a>
+
+            </div>
+
+            <div class="mega-col">
+
+                <p class="mega-title">Experience</p>
+
+                <a routerLink="/tourism" (click)="closeMega()">Wellness Tourism</a>
+                <a routerLink="/retreats" (click)="closeMega()">Retreats &amp; Longevity</a>
+
+            </div>
+
+            <div class="mega-col">
+
+                <p class="mega-title">Institutions</p>
+
+                <a routerLink="/The-Science" (click)="closeMega()">The Science &mdash; R&amp;D</a>
+                <a routerLink="/agriculture" (click)="closeMega()">Sustainable Agriculture</a>
+                <a routerLink="/preventive-healthcare" (click)="closeMega()">Preventive Healthcare</a>
+                <a routerLink="/digital" (click)="closeMega()">Digital &amp; Education</a>
+
+            </div>
+
+            <div class="mega-col mega-col--feature">
+
+                <p class="mega-title">Eight Pillars, One System</p>
+
+                <p class="mega-feature-text">
+                    Marketplace, certification, research, tourism, agriculture, education,
+                    consulting &mdash; one integrated ecosystem built on validated Siddha science.
+                </p>
+
+                <a routerLink="/home" (click)="closeMega()" class="mega-cta">
+                    See all 8 pillars →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MOBILE PANEL -->
+
+    <div class="mobile-panel" [class.open]="mobileOpen()">
+
+        <a routerLink="/home" (click)="toggleMobile()">Home</a>
+        <a routerLink="/consumer-wellness" (click)="toggleMobile()">Shop</a>
+        <a routerLink="/tourism" (click)="toggleMobile()">Wellness Tourism</a>
+        <a routerLink="/retreats" (click)="toggleMobile()">Retreats</a>
+        <a routerLink="/The-Science" (click)="toggleMobile()">The Science</a>
+        <a routerLink="/agriculture" (click)="toggleMobile()">Agriculture</a>
+        <a routerLink="/digital" (click)="toggleMobile()">Digital</a>
+        <a routerLink="/our-story" (click)="toggleMobile()">Our Story</a>
+        <a routerLink="/partner-invest" (click)="toggleMobile()">Partner &amp; Invest</a>
+        <a routerLink="/about" (click)="toggleMobile()">About</a>
+        <a routerLink="/contact" (click)="toggleMobile()">Contact</a>
+
+    </div>
+
+</nav>
+
+<div class="mega-backdrop" [class.open]="megaOpen()" (click)="closeMega()"></div>

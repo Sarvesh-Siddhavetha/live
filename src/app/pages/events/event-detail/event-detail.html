@@ -1,0 +1,80 @@
+<!-- Claude (Anthropic): created this file — Siddhavetha EY-style rebuild -->
+@if (event) {
+
+    <section class="event-hero" [style.background-image]="'url(' + event.image + ')'">
+
+        <div class="event-hero-overlay"></div>
+
+        <div class="container event-hero-content">
+
+            <span class="eyebrow">{{ event.tag }}</span>
+            <h1>{{ event.title }}</h1>
+            <span class="event-hero-date">{{ event.date }}</span>
+
+        </div>
+
+    </section>
+
+    <section class="event-details-section">
+
+        <div class="container event-details-grid">
+
+            <div class="event-details-main">
+
+                <p class="event-lede">{{ event.description }}</p>
+
+                <p>
+                    Full agenda, speakers and registration details will be published closer to
+                    the date. This page will be updated as plans are confirmed.
+                </p>
+
+                <p>
+                    In the meantime, explore the pillar this event belongs to, or get in touch
+                    if you would like to be notified when registration opens.
+                </p>
+
+                <div class="event-cta">
+                    <a routerLink="/contact" class="event-btn event-btn--primary">Get Notified</a>
+                    <a routerLink="/home" class="event-btn event-btn--outline">&larr; Back to Events</a>
+                </div>
+
+            </div>
+
+            <aside class="event-details-side">
+
+                <p class="event-side-label">Event Details</p>
+
+                <div class="event-side-row">
+                    <span>Date</span>
+                    <strong>{{ event.date }}</strong>
+                </div>
+
+                <div class="event-side-row">
+                    <span>Category</span>
+                    <strong>{{ event.tag }}</strong>
+                </div>
+
+                <div class="event-side-row">
+                    <span>Location</span>
+                    <strong>Siddhavetha Campus, Tamil Nadu</strong>
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+} @else {
+
+    <section class="event-not-found">
+
+        <div class="container">
+            <h1>Event not found</h1>
+            <p>This event may have been moved or is no longer listed.</p>
+            <a routerLink="/home" class="event-btn event-btn--primary">&larr; Back to Home</a>
+        </div>
+
+    </section>
+
+}

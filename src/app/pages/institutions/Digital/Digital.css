@@ -1,0 +1,112 @@
+/* ===========================
+   DIGITAL PRODUCTS SECTION
+=========================== */
+
+.why-made{
+    padding:80px 6%;
+    background:#ffffff;
+}
+
+.section-header{
+    margin-bottom:45px;
+}
+
+.section-header p{
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#b5b5b5;
+    margin-bottom:10px;
+}
+
+.section-header h2{
+    font-size:44px;
+    font-weight:600;
+    color:#1f1f1f;
+}
+
+/* ===========================
+   FEATURE GRID
+=========================== */
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:28px;
+
+    margin-bottom:40px;
+
+}
+
+/* ===========================
+   CARD ALIGNMENT
+=========================== */
+
+app-feature-card{
+
+    display:block;
+
+    height:100%;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1100px){
+
+.feature-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.why-made{
+
+padding:70px 25px;
+
+}
+
+.section-header h2{
+
+font-size:34px;
+
+}
+
+.feature-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.primary-btn{
+
+width:100%;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.section-header h2{
+
+font-size:28px;
+
+}
+
+.section-header p{
+
+font-size:11px;
+
+}
+
+}

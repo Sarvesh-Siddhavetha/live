@@ -1,0 +1,48 @@
+<div class="product-card">
+
+    <div class="product-image">
+
+        <img
+            [src]="image || 'assets/products/default-product.svg'"
+            [alt]="title || 'Product image'">
+
+    </div>
+
+    <div class="product-body">
+
+        <span class="product-category">
+
+            {{ category }}
+
+        </span>
+
+        <h3 class="product-title">
+
+            {{ title }}
+
+        </h3>
+
+        <p class="product-description">
+
+            {{ description }}
+
+        </p>
+
+        <div class="product-footer">
+
+            <span class="product-price">
+
+                {{ price }}
+
+            </span>
+
+            <app-button
+                label="Add to Ritual"
+                variant="primary">
+            </app-button>
+
+        </div>
+
+    </div>
+
+</div>

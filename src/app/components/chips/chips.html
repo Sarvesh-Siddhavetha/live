@@ -1,0 +1,16 @@
+<section class="chips-section">
+
+    <div class="chips-container">
+
+        @for (chip of chips; track chip) {
+
+            <app-button
+                [label]="chip"
+                variant="ghost">
+            </app-button>
+
+        }
+
+    </div>
+
+</section>

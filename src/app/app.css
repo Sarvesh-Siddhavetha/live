@@ -1,0 +1,48 @@
+/* Claude (Anthropic): substantially modified this file — Siddhavetha EY-style rebuild */
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.page-content{
+
+    display:block;
+
+    width:100%;
+
+    margin-top:80px;             /* Fixed navbar height */
+
+    padding:0;
+
+    background:var(--background);
+
+    min-height:calc(100vh - 80px);
+
+}
+
+/* =====================================================
+   EVERY PAGE
+===================================================== */
+
+.page-content > *{
+
+    width:100%;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:992px){
+
+    .page-content{
+
+        margin-left:0;
+
+        margin-top:72px;
+
+        width:100%;
+
+    }
+
+}

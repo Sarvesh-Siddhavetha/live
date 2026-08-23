@@ -1,0 +1,43 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Claude (Anthropic): generated this icon asset -- Siddhavetha EY-style rebuild -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F4F4F2"/>
+      <stop offset="100%" stop-color="#EDEDEA"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EC5611"/>
+      <stop offset="100%" stop-color="#F6A21E"/>
+    </linearGradient>
+    
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bg)"/>
+
+  <!-- topographic contour lines -->
+  <g stroke="#1A1A1A" stroke-opacity="0.05" fill="none" stroke-width="1.5">
+    <path d="M-40,520 C160,470 260,560 460,500 C620,455 700,510 840,470"/>
+    <path d="M-40,560 C180,510 300,590 480,540 C640,500 720,550 840,515"/>
+    <path d="M-40,60 C160,110 260,20 460,80 C620,125 700,70 840,110"/>
+  </g>
+
+  <!-- organic leaf-bracket corner accent -->
+  <path d="M0,0 C120,10 150,70 130,150 C160,90 60,20 0,50 Z" fill="url(#leafGrad)" opacity="0.9"/>
+  <path d="M800,600 C680,590 650,530 670,450 C640,510 740,580 800,550 Z" fill="#1A1A1A" opacity="0.92"/>
+
+  <!-- watermark index number -->
+  <text x="754" y="90" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="120" font-weight="600" fill="#1A1A1A" fill-opacity="0.055">04</text>
+
+  <!-- icon badge -->
+  <circle cx="400" cy="290" r="118" fill="#FFFFFF" stroke="#1A1A1A" stroke-opacity="0.08" stroke-width="2"/>
+  <circle cx="400" cy="290" r="118" fill="none" stroke="url(#leafGrad)" stroke-width="3" stroke-dasharray="4 10" opacity="0.55"/>
+
+  
+  <g transform="translate(354,205)">
+    <path d="M36 0 L56 0 M40 0 L40 56 L8 130 Q2 146 20 146 L72 146 Q90 146 84 130 L52 56 L52 0" fill="none" stroke="#1A1A1A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M18 108 Q46 92 74 108 L84 130 Q90 146 72 146 L20 146 Q2 146 8 130 Z" fill="#EC5611" opacity="0.88"/>
+    <circle cx="46" cy="30" r="5" fill="#EC5611"/>
+    <circle cx="38" cy="46" r="4" fill="#1A1A1A" opacity="0.5"/>
+  </g>
+
+</svg>

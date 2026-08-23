@@ -1,0 +1,74 @@
+<app-hero
+  category="CONSUMER WELLNESS"
+  title="Feel the difference of the real thing."
+  description="Daily supplements, functional tonics, and women's formulations built on Siddha, made on our farm, proven by results."
+  buttonText="Shop Wellness"
+  image="assets/images/shop/consumer-wellness-hero.png">
+</app-hero>
+
+<app-chips [chips]="categories"></app-chips>
+
+<section class="products">
+
+    <div class="section-header">
+        <p>LEAD PRODUCTS</p>
+        <h2>Our Range</h2>
+    </div>
+
+    <div class="product-grid">
+
+    <app-product-card
+        category="HERBAL SERUM"
+        title="Ageless Elixir"
+        description="A potent botanical serum crafted with time-honored Siddha herbs to deeply nourish, restore radiance, and support naturally youthful skin."
+        price="₹1,299"
+        image="assets/images/shop/consumer-wellness-product1.png">
+    </app-product-card>
+
+    <app-product-card
+        category="WELLNESS RITUAL"
+        title="Bath Ritual Collection"
+        description="Transform your daily routine into a calming self-care ritual with handcrafted bath essentials infused with pure herbs and aromatic botanicals."
+        price="₹1,499"
+        image="assets/images/shop/consumer-wellness-product2.png">
+    </app-product-card>
+
+    <app-product-card
+        category="HANDMADE SOAP"
+        title="Artisan Herbal Soaps"
+        description="Handcrafted herbal soaps made with natural oils and plant extracts to gently cleanse, moisturize, and refresh every skin type."
+        price="₹599"
+        image="assets/images/shop/consumer-wellness-product3.png">
+    </app-product-card>
+
+</div>
+
+</section>
+
+<section class="why-made">
+
+    <div class="section-header">
+        <p>WHY IT MATTERS</p>
+        <h2>Where it's made matters.</h2>
+    </div>
+
+    <div class="feature-grid">
+
+        <app-feature-card
+            title="Farm to Formula"
+            description="Every product begins with carefully cultivated herbs grown using sustainable practices.">
+        </app-feature-card>
+
+        <app-feature-card
+            title="Authentic Siddha"
+            description="Traditional Siddha wisdom combined with modern scientific manufacturing.">
+        </app-feature-card>
+
+        <app-feature-card
+            title="Quality Assured"
+            description="Every batch is rigorously tested for purity, consistency, and safety.">
+        </app-feature-card>
+
+    </div>
+
+</section>

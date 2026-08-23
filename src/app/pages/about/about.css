@@ -1,0 +1,173 @@
+/* Claude (Anthropic): created this file — Siddhavetha EY-style rebuild */
+/* ===========================
+   FOUNDATION
+=========================== */
+
+.foundation-section{
+    background:#fff;
+}
+
+.foundation-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.foundation-card{
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:30px 26px;
+    transition:.3s;
+}
+
+.foundation-card:hover{
+    border-color:var(--black);
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+.foundation-card h3{
+    font-size:19px;
+    margin-bottom:14px;
+    color:var(--black);
+}
+
+.foundation-card p{
+    font-size:15px;
+    line-height:1.75;
+}
+
+/* ===========================
+   VOICE
+=========================== */
+
+.voice-section{
+    background:var(--section-bg);
+}
+
+.voice-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-bottom:56px;
+}
+
+.voice-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:30px 26px;
+}
+
+.voice-card h3{
+    font-family:var(--heading-font);
+    font-size:20px;
+    color:var(--primary-orange);
+    margin-bottom:12px;
+}
+
+.voice-card p{
+    font-size:15px;
+    line-height:1.75;
+}
+
+.attributes-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+}
+
+.attribute-label{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--black);
+    margin-bottom:16px;
+}
+
+.attribute-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.attribute-tags span{
+    padding:8px 18px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:999px;
+    font-size:13px;
+    color:var(--dark-gray);
+}
+
+/* ===========================
+   DIFFERENTIATION
+=========================== */
+
+.differentiation-section{
+    background:var(--black);
+    text-align:center;
+}
+
+.differentiation-content{
+    max-width:820px;
+    margin:auto;
+}
+
+.section-tag{
+    display:block;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--primary-orange);
+    margin-bottom:28px;
+}
+
+.differentiation-content blockquote{
+    font-family:var(--heading-font);
+    font-size:32px;
+    line-height:1.45;
+    color:#fff;
+    font-weight:500;
+    margin:0 0 26px;
+}
+
+.differentiation-content blockquote em{
+    font-style:normal;
+    color:var(--primary-orange);
+}
+
+.differentiation-note{
+    color:rgba(255,255,255,.65);
+    font-size:15px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+    .foundation-grid,
+    .voice-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .attributes-row{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .foundation-grid,
+    .voice-grid{
+        grid-template-columns:1fr;
+    }
+
+    .differentiation-content blockquote{
+        font-size:24px;
+    }
+}

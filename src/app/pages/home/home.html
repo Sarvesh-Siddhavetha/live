@@ -1,0 +1,93 @@
+<!-- Claude (Anthropic): substantially modified this file — Siddhavetha EY-style rebuild -->
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="hero">
+
+    <div class="hero-slides">
+
+        @for (slide of heroSlides; track slide.text; let i = $index) {
+
+            <div
+                class="hero-slide"
+                [class.active]="i === activeHeroIndex()"
+                [style.background-image]="'url(' + slide.image + ')'">
+            </div>
+
+        }
+
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-wrapper">
+
+        <div class="hero-stage">
+
+            @for (slide of heroSlides; track slide.text; let i = $index) {
+
+                <h1 class="hero-slide-text" [class.active]="i === activeHeroIndex()">
+                    {{ slide.text }}
+                </h1>
+
+            }
+
+        </div>
+
+        <div class="hero-dots">
+
+            @for (slide of heroSlides; track slide.text; let i = $index) {
+
+                <button
+                    type="button"
+                    class="hero-dot"
+                    [class.active]="i === activeHeroIndex()"
+                    (click)="goToHeroSlide(i)"
+                    [attr.aria-label]="'Show slide ' + (i + 1)">
+                </button>
+
+            }
+
+        </div>
+
+    </div>
+
+</section>
+
+<app-promise-strip [promises]="promises"></app-promise-strip>
+
+<!-- ==========================================
+     EIGHT PILLARS CAROUSEL
+========================================== -->
+
+<section id="pillars" class="pillars-section">
+
+    <div class="container">
+
+        <div class="section-head">
+            <h2>One integrated system</h2>
+        </div>
+
+        <app-pillars-carousel></app-pillars-carousel>
+    </div>
+
+</section>
+
+<!-- ==========================================
+     EVENTS
+========================================== -->
+
+<section class="why-section">
+
+    <div class="container">
+
+        <div class="section-head">
+            <h2>Events</h2>
+        </div>
+
+        <app-events-carousel [events]="events"></app-events-carousel>
+
+    </div>
+
+</section>

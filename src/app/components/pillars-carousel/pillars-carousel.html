@@ -1,0 +1,39 @@
+<!-- Claude (Anthropic): created this file — Siddhavetha EY-style rebuild -->
+<div class="pillars-head">
+
+    <div class="pillars-arrows">
+
+        <button type="button" class="arrow-btn" (click)="prev()" aria-label="Previous pillar">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M17 7H1M1 7L7 1M1 7L7 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <button type="button" class="arrow-btn" (click)="next()" aria-label="Next pillar">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M1 7H17M17 7L11 1M17 7L11 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="pillars-track" #track>
+
+    @for (pillar of pillars; track pillar.index) {
+
+        <a class="pillar-card" [routerLink]="pillar.link">
+
+            <div class="pillar-media">
+                <img [src]="pillar.image" [alt]="pillar.title" loading="lazy">
+                <span class="pillar-index">{{ pillar.index }}</span>
+            </div>
+
+            <div class="pillar-body">
+                <h3>{{ pillar.title }}</h3>
+                <p>{{ pillar.description }}</p>
+                <span class="pillar-link">Explore pillar →</span>
+            </div>
+
+        </a>
+
+    }
+
+</div>

@@ -1,0 +1,91 @@
+<!-- Claude (Anthropic): created this file — Siddhavetha EY-style rebuild -->
+<app-hero
+    category="Contact"
+    title="Let's start the conversation."
+    description="Whether you're exploring a partnership, planning a retreat, or simply curious about the campus — we'd love to hear from you."
+    buttonText="Email Us"
+    image="assets/images/company/partner-hero.png">
+</app-hero>
+
+<!-- CHANNELS -->
+
+<section class="channels-section">
+
+    <div class="section-header">
+        <p>Reach The Right Team</p>
+        <h2>How can we help?</h2>
+    </div>
+
+    <div class="channels-grid">
+
+        @for (c of channels; track c.title) {
+
+            <div class="channel-card">
+                <h3>{{ c.title }}</h3>
+                <p>{{ c.text }}</p>
+                <a [href]="'mailto:' + c.email">{{ c.email }}</a>
+            </div>
+
+        }
+
+    </div>
+
+</section>
+
+<!-- FORM + LOCATION -->
+
+<section class="form-section">
+
+    <div class="form-grid">
+
+        <form class="contact-form" (submit)="$event.preventDefault()">
+
+            <p class="form-tag">Send a Message</p>
+            <h2>Tell us what you're building.</h2>
+
+            <div class="form-row">
+                <label>
+                    Full Name
+                    <input type="text" name="name" placeholder="Your name" required>
+                </label>
+                <label>
+                    Email Address
+                    <input type="email" name="email" placeholder="you@example.com" required>
+                </label>
+            </div>
+
+            <label>
+                Subject
+                <input type="text" name="subject" placeholder="Partnership, retreat, research...">
+            </label>
+
+            <label>
+                Message
+                <textarea name="message" rows="5" placeholder="Tell us a little about your enquiry" required></textarea>
+            </label>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+
+        </form>
+
+        <div class="location-card">
+
+            <p class="form-tag">Visit The Campus</p>
+            <h3>Siddhavetha Global Innovations</h3>
+
+            <p class="location-text">
+                Global Ancient Sciences &amp; Sustainable University<br>
+                600-acre campus &middot; Tamil Nadu, India<br>
+                Global footprint across 70+ partner institutions
+            </p>
+
+            <div class="location-stats">
+                <div><h4>600</h4><span>Acres envisaged</span></div>
+                <div><h4>250</h4><span>Acres secured today</span></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

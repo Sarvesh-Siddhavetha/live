@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Claude (Anthropic): generated this icon asset -- Siddhavetha EY-style rebuild -->
+  <rect x="4" y="4" width="192" height="192" rx="28" fill="#F4F4F2" stroke="#1A1A1A" stroke-opacity="0.08" stroke-width="2"/>
+  
+  <g transform="translate(40,52)">
+    <path d="M60 0 L120 30 L60 60 L0 30 Z" fill="#1A1A1A"/>
+    <path d="M30 44 L30 70 Q30 84 60 84 Q90 84 90 70 L90 44" fill="none" stroke="#EC5611" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+</svg>

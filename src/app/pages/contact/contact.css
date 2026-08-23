@@ -1,0 +1,212 @@
+/* Claude (Anthropic): created this file — Siddhavetha EY-style rebuild */
+/* ===========================
+   CHANNELS
+=========================== */
+
+.channels-section{
+    background:#fff;
+}
+
+.channels-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.channel-card{
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:28px 24px;
+    transition:.3s;
+}
+
+.channel-card:hover{
+    border-color:var(--black);
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+.channel-card h3{
+    font-size:18px;
+    margin-bottom:12px;
+    color:var(--black);
+}
+
+.channel-card p{
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:18px;
+}
+
+.channel-card a{
+    font-size:14px;
+    font-weight:600;
+    color:var(--primary-orange);
+}
+
+.channel-card a:hover{
+    text-decoration:underline;
+}
+
+/* ===========================
+   FORM SECTION
+=========================== */
+
+.form-section{
+    background:var(--section-bg);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:50px;
+    align-items:start;
+}
+
+.contact-form{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:48px;
+}
+
+.form-tag{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--primary-orange);
+    margin-bottom:14px;
+}
+
+.contact-form h2{
+    font-size:32px;
+    margin-bottom:32px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.contact-form label{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    font-size:13px;
+    font-weight:600;
+    color:var(--black);
+    margin-bottom:22px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    font-family:var(--body-font);
+    font-size:15px;
+    font-weight:400;
+    padding:14px 16px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    outline:none;
+    resize:vertical;
+    transition:.25s;
+    color:var(--black);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:var(--black);
+    box-shadow:0 0 0 4px var(--ink-tint-06);
+}
+
+.submit-btn{
+    background:var(--black);
+    color:#fff;
+    border:none;
+    padding:15px 34px;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    background:var(--primary-orange);
+    transform:translateY(-2px);
+}
+
+/* ===========================
+   LOCATION CARD
+=========================== */
+
+.location-card{
+    background:var(--black);
+    border-radius:24px;
+    padding:44px 38px;
+    color:#fff;
+}
+
+.location-card h3{
+    font-size:24px;
+    color:#fff;
+    margin-bottom:18px;
+}
+
+.location-text{
+    font-size:14.5px;
+    line-height:1.9;
+    color:rgba(255,255,255,.72);
+    margin-bottom:32px;
+}
+
+.location-stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    padding-top:24px;
+    border-top:1px solid rgba(255,255,255,.12);
+}
+
+.location-stats h4{
+    font-family:var(--heading-font);
+    font-size:32px;
+    color:var(--primary-orange);
+    margin-bottom:6px;
+}
+
+.location-stats span{
+    font-size:13px;
+    color:rgba(255,255,255,.65);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1100px){
+
+    .channels-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .channels-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .contact-form{
+        padding:30px 24px;
+    }
+}

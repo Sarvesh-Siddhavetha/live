@@ -1,0 +1,94 @@
+<!-- Claude (Anthropic): created this file — Siddhavetha EY-style rebuild -->
+<app-hero
+    category="About Us"
+    title="Why we exist."
+    description="The purpose, mission and promise behind every product, program and partnership — the strategic bedrock every decision at Siddhavetha flows from."
+    buttonText="Read Our Story"
+    image="assets/images/company/our-story-hero.png">
+</app-hero>
+
+<!-- FOUNDATION -->
+
+<section class="foundation-section">
+
+    <div class="section-header">
+        <p>Brand Foundation</p>
+        <h2>Eleven foundations, one bedrock.</h2>
+    </div>
+
+    <div class="foundation-grid">
+
+        @for (f of foundation; track f.title) {
+
+            <div class="foundation-card">
+                <h3>{{ f.title }}</h3>
+                <p>{{ f.text }}</p>
+            </div>
+
+        }
+
+    </div>
+
+</section>
+
+<!-- VOICE -->
+
+<section class="voice-section">
+
+    <div class="section-header">
+        <p>How We Speak</p>
+        <h2>Three voice principles.</h2>
+    </div>
+
+    <div class="voice-grid">
+
+        @for (v of voice; track v.title) {
+
+            <div class="voice-card">
+                <h3>{{ v.title }}</h3>
+                <p>{{ v.text }}</p>
+            </div>
+
+        }
+
+    </div>
+
+    <div class="attributes-row">
+
+        <div class="attribute-block">
+            <p class="attribute-label">Emotional Attributes</p>
+            <div class="attribute-tags">
+                @for (e of emotional; track e) { <span>{{ e }}</span> }
+            </div>
+        </div>
+
+        <div class="attribute-block">
+            <p class="attribute-label">Functional Attributes</p>
+            <div class="attribute-tags">
+                @for (fn of functional; track fn) { <span>{{ fn }}</span> }
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DIFFERENTIATION -->
+
+<section class="differentiation-section">
+
+    <div class="differentiation-content">
+
+        <p class="section-tag">Differentiation Strategy — In One Line</p>
+
+        <blockquote>
+            "We do not compete on courses or campuses; we own an entirely new category —
+            <em>Conscious Living Campus &amp; Community Development</em> — where education,
+            healing, agriculture, and commerce regenerate one another."
+        </blockquote>
+
+        <p class="differentiation-note">No direct competitor exists — only partial, complementary models.</p>
+
+    </div>
+
+</section>
