@@ -69,3 +69,9 @@ This file distinguishes work completed by Codex and Claude in the shared Siddhav
 - Area/files: Global styles and card styles across homepage, events, products, features, About, Contact, Science, Partner & Invest, and initiative pages
 - Change: Introduced a shared orange hover-shadow token and applied it consistently to every card system with matching orange hover borders and smooth transitions.
 - Validation: Production build, source audit of card hover selectors, and browser checks on representative card types.
+
+### 2026-08-24 [CODEX] Matched event card content formatting to pillar cards
+
+- Area/files: Event carousel styles
+- Change: Added the same bordered white-card structure and 24px content inset used by pillar cards, kept event headings black on hover, and prevented the orange hover border from touching event text.
+- Validation: Production build and browser hover inspection.
