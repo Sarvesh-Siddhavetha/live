@@ -7,7 +7,7 @@
 
     <div class="hero-slides">
 
-        @for (slide of heroSlides; track slide.text; let i = $index) {
+        @for (slide of heroSlides; track slide.link; let i = $index) {
 
             <div
                 class="hero-slide"
@@ -25,11 +25,17 @@
 
         <div class="hero-stage">
 
-            @for (slide of heroSlides; track slide.text; let i = $index) {
+            @for (slide of heroSlides; track slide.link; let i = $index) {
 
-                <h1 class="hero-slide-text" [class.active]="i === activeHeroIndex()">
-                    {{ slide.text }}
-                </h1>
+                <div class="hero-slide-content" [class.active]="i === activeHeroIndex()">
+                    <h1>
+                        @for (line of slide.titleLines; track line) {
+                            <span>{{ line }}</span>
+                        }
+                    </h1>
+                    <p>{{ slide.description }}</p>
+                    <span class="hero-cta">Discover more <span aria-hidden="true">→</span></span>
+                </div>
 
             }
 
@@ -37,7 +43,7 @@
 
         <div class="hero-dots">
 
-            @for (slide of heroSlides; track slide.text; let i = $index) {
+            @for (slide of heroSlides; track slide.link; let i = $index) {
 
                 <button
                     type="button"
@@ -53,9 +59,13 @@
 
     </div>
 
-</section>
+    <a
+        class="hero-click-target"
+        [routerLink]="heroSlides[activeHeroIndex()].link"
+        [attr.aria-label]="'Explore ' + heroSlides[activeHeroIndex()].titleLines.join(' ') ">
+    </a>
 
-<app-promise-strip [promises]="promises"></app-promise-strip>
+</section>
 
 <!-- ==========================================
      EIGHT PILLARS CAROUSEL

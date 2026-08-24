@@ -28,56 +28,56 @@ export class PillarsCarouselComponent {
       index: '01',
       title: 'Green Amazon Marketplace',
       description: 'A curated global marketplace connecting authentic Siddha and natural products with conscious consumers worldwide.',
-      image: 'assets/images/pillars/01-green-amazon-marketplace.svg',
+      image: 'assets/images/pillar-photos/01-green-amazon-marketplace.png',
       link: '/consumer-wellness'
     },
     {
       index: '02',
       title: 'Consumer Products',
       description: 'Branded native product lines — supplements, tonics and holistic nutrition — grown and formulated on our own certified campus.',
-      image: 'assets/images/pillars/02-consumer-products.svg',
+      image: 'assets/images/pillar-photos/02-consumer-products.png',
       link: '/personal-care'
     },
     {
       index: '03',
       title: 'Global Certification & Quality Assurance',
       description: 'Proprietary sustainability and quality certification that gives small producers and MSMEs a path to international export standards.',
-      image: 'assets/images/pillars/03-global-certification-quality-assurance.svg',
+      image: 'assets/images/pillar-photos/03-global-certification-quality-assurance.png',
       link: '/The-Science'
     },
     {
       index: '04',
       title: 'Global Research & Innovation Centre',
       description: 'Documentation, formulation, testing and validation — the laboratory that turns community knowledge into citable, compliant science.',
-      image: 'assets/images/pillars/04-global-research-innovation-centre.svg',
+      image: 'assets/images/pillar-photos/04-global-research-innovation-centre.png',
       link: '/The-Science'
     },
     {
       index: '05',
       title: 'Wellness Tourism',
       description: 'On-campus Siddha healing retreats and conscious-living immersive experiences for domestic and international visitors.',
-      image: 'assets/images/pillars/05-wellness-tourism.svg',
+      image: 'assets/images/pillar-photos/05-wellness-tourism.png',
       link: '/tourism'
     },
     {
       index: '06',
       title: 'Sustainable Agriculture & Green Economy',
       description: 'Manure-less, net-negative organic farming that regenerates soil while supplying our own product and research pipelines.',
-      image: 'assets/images/pillars/06-sustainable-agriculture-green-economy.svg',
+      image: 'assets/images/pillar-photos/06-sustainable-agriculture-green-economy.png',
       link: '/agriculture'
     },
     {
       index: '07',
       title: 'Global Education & Knowledge Network',
       description: 'International and domestic degree, dual-degree and executive certification programmes across five knowledge pillars.',
-      image: 'assets/images/pillars/07-global-education-knowledge-network.svg',
+      image: 'assets/images/pillar-photos/07-global-education-knowledge-network.png',
       link: '/digital'
     },
     {
       index: '08',
       title: 'Innovation Consulting & Social Innovation',
       description: 'A startup incubation centre and consulting practice that licenses Siddha IP and social-innovation models to partners.',
-      image: 'assets/images/pillars/08-innovation-consulting-social-innovation.svg',
+      image: 'assets/images/pillar-photos/08-innovation-consulting-social-innovation.png',
       link: '/partner-invest'
     }
   ];

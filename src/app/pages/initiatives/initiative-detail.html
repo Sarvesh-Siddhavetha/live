@@ -1,0 +1,45 @@
+<main>
+    <section class="initiative-hero" [style.background-image]="'url(' + page.image + ')'">
+        <div class="initiative-overlay"></div>
+        <div class="initiative-container initiative-hero-content">
+            <p class="eyebrow">{{ page.eyebrow }}</p>
+            <h1>{{ page.title }}</h1>
+            <p class="lead">{{ page.description }}</p>
+        </div>
+    </section>
+
+    <section class="initiative-intro">
+        <div class="initiative-container intro-grid">
+            <div>
+                <p class="section-label">Building the future</p>
+                <h2>A platform where heritage becomes global progress.</h2>
+            </div>
+            <p class="intro-copy">This page provides an initial framework for the initiative. Detailed programmes, partnerships, milestones and impact measures will be added as the project evolves.</p>
+        </div>
+    </section>
+
+    <section class="focus-section">
+        <div class="initiative-container">
+            <p class="section-label">Strategic focus</p>
+            <div class="focus-grid">
+                @for (item of page.focus; track item.title; let i = $index) {
+                    <article class="focus-card">
+                        <span>0{{ i + 1 }}</span>
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.text }}</p>
+                    </article>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="initiative-cta">
+        <div class="initiative-container cta-inner">
+            <div>
+                <p class="section-label">Explore Siddhavetha</p>
+                <h2>One vision. Eight integrated pillars.</h2>
+            </div>
+            <a routerLink="/home" fragment="pillars">Explore the ecosystem <span aria-hidden="true">→</span></a>
+        </div>
+    </section>
+</main>

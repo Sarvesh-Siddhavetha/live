@@ -65,6 +65,7 @@
 
     --shadow-sm:0 4px 15px rgba(0,0,0,.05);
     --shadow-md:0 10px 30px rgba(0,0,0,.08);
+    --shadow-hover-orange:0 24px 50px rgba(236,86,17,.24), 0 8px 20px rgba(236,86,17,.12);
 
     /* Transition */
 
@@ -338,7 +339,9 @@ section{
 
     transform:translateY(-6px);
 
-    box-shadow:var(--shadow-md);
+    box-shadow:var(--shadow-hover-orange);
+
+    border-color:var(--primary-orange);
 
 }
 

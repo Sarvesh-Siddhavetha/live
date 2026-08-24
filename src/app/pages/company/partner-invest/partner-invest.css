@@ -90,6 +90,18 @@ section{
 
     padding:35px;
 
+    transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:var(--primary-orange);
+
+    box-shadow:var(--shadow-hover-orange);
+
 }
 
 .stat-card h2{

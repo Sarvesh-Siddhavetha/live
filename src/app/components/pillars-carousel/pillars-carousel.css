@@ -3,6 +3,8 @@
 
     display: block;
 
+    position: relative;
+
 }
 
 /* =====================================================
@@ -17,7 +19,15 @@
 
     justify-content: flex-end;
 
-    margin-bottom: 24px;
+    position: absolute;
+
+    right: 0;
+
+    top: -99px;
+
+    margin: 0;
+
+    z-index: 2;
 
 }
 
@@ -88,7 +98,7 @@
 
     scrollbar-width: none;
 
-    padding-bottom: 8px;
+    padding-bottom: 0;
 
     margin: 0 -4px;
 
@@ -128,9 +138,9 @@
 
     transform: translateY(-10px);
 
-    box-shadow: 0 30px 55px rgba(0,0,0,.14);
+    box-shadow: var(--shadow-hover-orange);
 
-    border-color: var(--black);
+    border-color: var(--primary-orange);
 
 }
 
@@ -274,11 +284,11 @@
 
     .pillars-head{
 
-        flex-direction: column;
+        position: static;
 
-        align-items: flex-start;
+        justify-content: flex-start;
 
-        gap: 20px;
+        margin: -14px 0 24px;
 
     }
 
