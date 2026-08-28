@@ -19,7 +19,7 @@
 
     @for (event of events; track event.id) {
 
-        <a class="event-card" [routerLink]="['/events', event.id]">
+        <article class="event-card">
 
             <div class="event-media">
                 <img [src]="event.image" [alt]="event.title" loading="lazy">
@@ -37,8 +37,82 @@
 
             </div>
 
-        </a>
+            <button
+                type="button"
+                class="event-open"
+                (click)="openEvent(event)"
+                [attr.aria-label]="'Open details for ' + event.title">
+            </button>
+
+        </article>
 
     }
 
 </div>
+
+@if (selectedEvent(); as event) {
+
+    <div class="event-modal" (click)="closeEvent()">
+
+        <section
+            class="event-modal-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="event-modal-title"
+            (click)="$event.stopPropagation()">
+
+            <button type="button" class="event-modal-close" (click)="closeEvent()" aria-label="Close event details">×</button>
+
+            <div class="event-modal-media">
+
+                <img
+                    [src]="event.gallery[modalSlideIndex()].image"
+                    [alt]="event.gallery[modalSlideIndex()].title">
+
+                <div class="event-image-shade"></div>
+
+                <button type="button" class="event-photo-arrow event-photo-arrow--prev" (click)="prevPhoto()" aria-label="Previous event photo">
+                    <svg width="22" height="18" viewBox="0 0 22 18" fill="none"><path d="M21 9H1M1 9L9 1M1 9L9 17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+
+                <button type="button" class="event-photo-arrow event-photo-arrow--next" (click)="nextPhoto()" aria-label="Next event photo">
+                    <svg width="22" height="18" viewBox="0 0 22 18" fill="none"><path d="M1 9H21M21 9L13 1M21 9L13 17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+
+                <div class="event-photo-copy">
+                    <span>{{ modalSlideIndex() + 1 }} / {{ event.gallery.length }}</span>
+                    <h3>{{ event.gallery[modalSlideIndex()].title }}</h3>
+                    <p>{{ event.gallery[modalSlideIndex()].description }}</p>
+                </div>
+
+                <div class="event-photo-dots" aria-label="Choose event photo">
+                    @for (slide of event.gallery; track slide.image; let i = $index) {
+                        <button
+                            type="button"
+                            [class.active]="i === modalSlideIndex()"
+                            (click)="goToPhoto(i)"
+                            [attr.aria-label]="'Show event photo ' + (i + 1)">
+                        </button>
+                    }
+                </div>
+
+            </div>
+
+            <div class="event-modal-content">
+                <span class="event-modal-eyebrow">{{ event.tag }} · {{ event.date }}</span>
+                <h2 id="event-modal-title">{{ event.title }}</h2>
+                <p class="event-modal-lede">{{ event.description }}</p>
+
+                <div class="event-modal-meta">
+                    <div><span>Date</span><strong>{{ event.date }}</strong></div>
+                    <div><span>Location</span><strong>Siddhavetha Campus, Tamil Nadu</strong></div>
+                </div>
+
+                <p class="event-modal-note">Full agenda, speakers and registration details will be published as the event programme is confirmed.</p>
+            </div>
+
+        </section>
+
+    </div>
+
+}

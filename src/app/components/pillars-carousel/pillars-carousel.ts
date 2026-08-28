@@ -75,10 +75,10 @@ export class PillarsCarouselComponent {
     },
     {
       index: '08',
-      title: 'Innovation Consulting & Social Innovation',
-      description: 'A startup incubation centre and consulting practice that licenses Siddha IP and social-innovation models to partners.',
+      title: 'Consulting & Innovation',
+      description: 'A global capability centre turning indigenous knowledge into rigorous research, publication-ready evidence and scalable education programs.',
       image: 'assets/images/pillar-photos/08-innovation-consulting-social-innovation.png',
-      link: '/partner-invest'
+      link: '/consulting-innovation'
     }
   ];
 

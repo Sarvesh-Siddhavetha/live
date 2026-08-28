@@ -16,8 +16,9 @@
 
 .section-head h2{
     font-family:var(--heading-font);
-    font-size:44px;
-    line-height:1.15;
+    font-size:clamp(34px,3.4vw,44px);
+    line-height:1.1;
+    letter-spacing:-.02em;
     color:var(--black);
     margin:0;
 }
@@ -96,10 +97,10 @@
 
 .hero-slide-content h1{
     font-family:var(--heading-font);
-    font-size:68px;
-    font-weight:600;
-    line-height:1.12;
-    letter-spacing:-1px;
+    font-size:clamp(48px,5vw,64px);
+    font-weight:700;
+    line-height:1.06;
+    letter-spacing:-.025em;
     color:#fff;
     margin:0 0 30px;
 }
@@ -108,12 +109,20 @@
     display:block;
 }
 
+.hero-slide-content h1.hero-title--brand{
+    letter-spacing:.01em;
+}
+
 .hero-slide-content p{
+    display:block;
+    align-self:flex-start;
     max-width:920px;
     padding-left:20px;
+    padding-top:0;
+    padding-bottom:0;
     border-left:5px solid var(--primary-orange);
     font-size:18px;
-    line-height:1.55;
+    line-height:1.6;
     color:rgba(255,255,255,.9);
     margin:0;
 }
@@ -202,11 +211,15 @@
         margin-bottom:22px;
     }
 
+    .hero-slide-content h1.hero-title--brand{
+        letter-spacing:.005em;
+    }
+
     .hero-slide-content p{
         padding-left:14px;
         border-left-width:4px;
         font-size:14px;
-        line-height:1.5;
+        line-height:1.6;
     }
 
     .hero-stage{
@@ -227,6 +240,11 @@
     padding:48px 0;
     background:#fff;
     scroll-margin-top:96px;
+}
+
+.pillars-section .section-head h2{
+    color:#111111;
+    font-weight:700;
 }
 
 /* ==========================================

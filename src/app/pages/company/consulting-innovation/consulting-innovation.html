@@ -1,0 +1,306 @@
+<article class="consulting-page">
+  <section class="consulting-hero" aria-labelledby="consulting-title">
+    <div class="hero-image" aria-hidden="true">
+      <img
+        src="assets/images/hero/siddhavetha-global-innovation-capability-centre.jpg"
+        alt=""
+        width="2048"
+        height="1152"
+        fetchpriority="high">
+    </div>
+
+    <div class="hero-shade" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <p class="eyebrow">Pillar 08 · Consulting &amp; Innovation</p>
+      <h1 id="consulting-title">Turn indigenous knowledge into evidence the world can use.</h1>
+      <p class="hero-copy">
+        Siddhavetha’s Global Capability Center connects ancient wisdom with modern research,
+        creating credible pathways to publication, education, innovation and global careers.
+      </p>
+
+      <div class="hero-actions">
+        <a class="action action--primary" routerLink="/consulting-innovation" fragment="offerings">Explore our offerings <span aria-hidden="true">↓</span></a>
+        <a class="action action--outline" routerLink="/contact">Bring GCC to your campus <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <div class="hero-proof" aria-label="Core capabilities">
+      <span>Transdisciplinary</span>
+      <span>Research-led</span>
+      <span>Globally connected</span>
+    </div>
+  </section>
+
+  <section class="intro-section">
+    <div class="section-shell intro-grid">
+      <div>
+        <p class="section-kicker">A capability centre for translation</p>
+        <h2>Modern science.<br>Ancient wisdom.</h2>
+      </div>
+
+      <div class="intro-copy">
+        <p class="intro-lead">
+          We help institutions, researchers and young minds turn India’s indigenous knowledge
+          into globally relevant research, careers, curricula and products.
+        </p>
+        <p>
+          Rather than competing with existing institutes, we complement them — bringing mentors,
+          methods, validation pathways, conferences and journals into one connected ecosystem.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-shell opportunity-grid" aria-label="Why this capability matters">
+      <div class="opportunity-card">
+        <span>01</span>
+        <h3>Indigenous roots</h3>
+        <p>Teachings of the Siddhars and India’s living knowledge traditions, reframed for a modern scientific era.</p>
+      </div>
+      <div class="opportunity-card">
+        <span>02</span>
+        <h3>Transdisciplinary method</h3>
+        <p>One research ecosystem spanning science, sustainability, health, education and society.</p>
+      </div>
+      <div class="opportunity-card">
+        <span>03</span>
+        <h3>Global network</h3>
+        <p>Mentors, indexed journals and international conferences connecting India’s knowledge to the world.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="model-section">
+    <div class="section-shell">
+      <div class="section-heading section-heading--split">
+        <div>
+          <p class="section-kicker section-kicker--light">Our model</p>
+          <h2>From knowledge to the global stage.</h2>
+        </div>
+        <p>The same evidence pipeline powers our consulting engagements, institutional programs and student research.</p>
+      </div>
+
+      <ol class="model-flow">
+        <li>
+          <span class="flow-number">01</span>
+          <div>
+            <h3>Community &amp; indigenous knowledge</h3>
+            <p>Knowledge held by elders and communities across India’s traditions.</p>
+          </div>
+        </li>
+        <li>
+          <span class="flow-number">02</span>
+          <div>
+            <h3>GCC research &amp; validation</h3>
+            <p>Documentation, method, testing and validation with consent and named custodians.</p>
+          </div>
+        </li>
+        <li>
+          <span class="flow-number">03</span>
+          <div>
+            <h3>Global stage</h3>
+            <p>Peer-reviewed papers, conference presentations, curricula and products.</p>
+          </div>
+        </li>
+      </ol>
+
+      <p class="model-note">Two tracks, one body of knowledge: hard knowledge becomes products; soft knowledge becomes curriculum.</p>
+    </div>
+  </section>
+
+  <section id="offerings" class="offerings-section">
+    <div class="section-shell">
+      <div class="section-heading">
+        <p class="section-kicker">Consulting &amp; innovation portfolio</p>
+        <h2>Six ways we build capability.</h2>
+        <p>YEIKCA is one offering within a broader platform for institutional research, education and innovation.</p>
+      </div>
+
+      <div class="offerings-grid">
+        @for (offering of offerings; track offering.index) {
+          <article class="offering-card">
+            <div class="offering-topline">
+              <span>{{ offering.index }}</span>
+              @if (offering.index === '02') {
+                <small>Featured program</small>
+              }
+            </div>
+            <h3>{{ offering.title }}</h3>
+            <p>{{ offering.description }}</p>
+            <p class="offering-detail">{{ offering.detail }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="yeikca-section" aria-labelledby="yeikca-title">
+    <div class="section-shell yeikca-layout">
+      <div class="yeikca-feature">
+        <p class="section-kicker">Featured offering</p>
+        <p class="yeikca-name">YEIKCA</p>
+        <h2 id="yeikca-title">Youth Empowerment, Indigenous Knowledge &amp; Career Accelerator</h2>
+        <p>
+          A mentor-led program that equips aspiring researchers with foundations in academic
+          research, writing and presentation, alongside life management, conscious living and
+          social entrepreneurship.
+        </p>
+        <div class="delivery-tags" aria-label="Delivery modes">
+          <span>Live online</span>
+          <span>Recorded learning</span>
+          <span>In-person option</span>
+          <span>Real research</span>
+        </div>
+      </div>
+
+      <div class="outcomes-grid">
+        @for (outcome of yeikcaOutcomes; track outcome.title) {
+          <article class="outcome-card">
+            <h3>{{ outcome.title }}</h3>
+            <p>{{ outcome.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="program-section">
+    <div class="section-shell">
+      <div class="section-heading section-heading--split">
+        <div>
+          <p class="section-kicker">Research pathways</p>
+          <h2>Progress from first method to continued publication.</h2>
+        </div>
+        <p>Mentor-led original research, co-authored, published and presented on the global stage.</p>
+      </div>
+
+      <div class="program-grid">
+        <article class="program-card">
+          <span class="program-level">Basic</span>
+          <h3>Introductory Research Program</h3>
+          <dl>
+            <div><dt>Mode</dt><dd>Online · live + recorded</dd></div>
+            <div><dt>Prerequisite</dt><dd>None</dd></div>
+          </dl>
+          <p>Research methodology, literature review and academic writing; co-author an abstract and present it.</p>
+        </article>
+
+        <article class="program-card program-card--accent">
+          <span class="program-level">Advanced</span>
+          <h3>Advanced Research Program</h3>
+          <dl>
+            <div><dt>Duration</dt><dd>6–9 months</dd></div>
+            <div><dt>Includes</dt><dd>Basic program</dd></div>
+          </dl>
+          <p>Develop publishable, co-authored research; present at conferences and publish in indexed journals.</p>
+        </article>
+
+        <article class="program-card">
+          <span class="program-level">Extended</span>
+          <h3>Continued Research Program</h3>
+          <dl>
+            <div><dt>For</dt><dd>Advanced alumni</dd></div>
+            <div><dt>Structure</dt><dd>Month to month</dd></div>
+          </dl>
+          <p>Continue publishing additional papers with ongoing mentorship and research guidance.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="research-section">
+    <div class="section-shell research-layout">
+      <div class="research-intro">
+        <p class="section-kicker section-kicker--light">Publication-grade biomedical science</p>
+        <h2>Areas of research</h2>
+        <p>Modern computational and biological methods applied to medicinal plants, natural products and human health.</p>
+      </div>
+
+      <div class="research-list">
+        @for (area of researchAreas; track area.title; let i = $index) {
+          <article>
+            <span>{{ (i + 1).toString().padStart(2, '0') }}</span>
+            <div>
+              <h3>{{ area.title }}</h3>
+              <p>{{ area.description }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="proof-section">
+    <div class="section-shell">
+      <div class="section-heading">
+        <p class="section-kicker">Proven outcomes</p>
+        <h2>Not a promise — a record.</h2>
+        <p>Student work has already reached peer-reviewed journals and international scientific conferences.</p>
+      </div>
+
+      <div class="proof-grid">
+        <div><strong>13</strong><span>student researchers</span></div>
+        <div><strong>12+</strong><span>conference abstracts</span></div>
+        <div><strong>Q1</strong><span>journal ambition</span></div>
+        <div><strong>Global</strong><span>conference readiness</span></div>
+      </div>
+
+      <div class="publication-row" aria-label="Publication and presentation destinations">
+        <span>Biophysical Journal · Cell Press</span>
+        <span>International Journal of Molecular Sciences</span>
+        <span>Journal of Translational Medicine</span>
+        <span>American College of Lifestyle Medicine</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="partner-section">
+    <div class="section-shell partner-layout">
+      <div class="partner-image">
+        <img
+          src="assets/images/pillar-photos/08-innovation-consulting-social-innovation.png"
+          alt="Siddhavetha researchers and community partners collaborating around a project table"
+          width="1536"
+          height="1024"
+          loading="lazy">
+      </div>
+
+      <div class="partner-content">
+        <p class="section-kicker">For institutions</p>
+        <h2>Partner with GCC at your campus.</h2>
+        <p>
+          Create a centre of excellence with research mentorship, learning resources,
+          scholarships, internships and pathways to publication and global presentation.
+        </p>
+
+        <ol class="partner-steps">
+          <li><span>01</span><div><strong>Your institution leads</strong><p>Define the student, faculty or institutional research opportunity.</p></div></li>
+          <li><span>02</span><div><strong>GCC brings the pipeline</strong><p>Access mentors, methods, validation and publication guidance.</p></div></li>
+          <li><span>03</span><div><strong>Together, take it global</strong><p>Build toward translational outcomes, patents, papers and conferences.</p></div></li>
+        </ol>
+
+        <p class="funding-note">
+          Eligible Tamil Nadu government higher-education partners may be able to use the Chief Minister’s
+          Research Grant pathway, with Siddhavetha Global Innovations participating as industry Co-PI.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing-section">
+    <div class="section-shell closing-layout">
+      <div>
+        <p class="section-kicker section-kicker--light">Open to the world</p>
+        <h2>Bring research, publication and innovation to your campus.</h2>
+      </div>
+      <div class="closing-contact">
+        <p>Start a conversation about GCC, YEIKCA or an institutional research partnership.</p>
+        <a class="action action--primary" routerLink="/contact">Contact Siddhavetha <span aria-hidden="true">↗</span></a>
+        <div class="contact-lines">
+          <a href="tel:+919842509702">+91 98425 09702</a>
+          <a href="mailto:info@siddhavethamultiversity.org">info&#64;siddhavethamultiversity.org</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>

@@ -28,7 +28,7 @@
             @for (slide of heroSlides; track slide.link; let i = $index) {
 
                 <div class="hero-slide-content" [class.active]="i === activeHeroIndex()">
-                    <h1>
+                    <h1 [class.hero-title--brand]="i === 0">
                         @for (line of slide.titleLines; track line) {
                             <span>{{ line }}</span>
                         }

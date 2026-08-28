@@ -21,7 +21,7 @@
 
     position: absolute;
 
-    right: 0;
+    right: -4px;
 
     top: -99px;
 
@@ -178,9 +178,9 @@
 
     position: absolute;
 
-    top: 16px;
+    top: 18px;
 
-    left: 16px;
+    left: 18px;
 
     width: 40px;
 

@@ -75,3 +75,40 @@ This file distinguishes work completed by Codex and Claude in the shared Siddhav
 - Area/files: Event carousel styles
 - Change: Added the same bordered white-card structure and 24px content inset used by pillar cards, kept event headings black on hover, and prevented the orange hover border from touching event text.
 - Validation: Production build and browser hover inspection.
+
+### 2026-08-25 [CODEX] Introduced S&P Global-inspired AkkuratPro typography
+
+- Area/files: Global design system, homepage typography, and document metadata
+- Change: Replaced the Fraunces/Poppins pairing with AkkuratPro Bold for headings and AkkuratPro Regular for body content, introduced a restrained corporate type scale, removed the Google Fonts request, and set the Siddhavetha logo as the browser and Apple touch icon.
+- Note: The licensed AkkuratPro font binaries are not present in the project or installed locally, so the exact family names use local detection followed by Arial/Helvetica fallbacks until licensed webfont files are supplied.
+- Validation: Production build plus desktop/mobile browser checks for hierarchy, wrapping, favicon loading, and overflow.
+
+### 2026-08-25 [CODEX] Rebuilt Consumer Wellness as a curated ecommerce marketplace
+
+- Area/files: `src/app/pages/shop/consumer-wellness/` and the component-style build budget in `angular.json`
+- Change: Replaced the simple three-product landing page with a page-scoped ecommerce experience featuring marketplace search, category discovery, Siddhavetha and certified-partner product cards, sort/filter controls, wishlist and cart counters, detailed product spotlight, partner marketplace messaging, and quality standards. No other route or page component was changed.
+- Validation: Production build passed; browser-tested desktop and 393 px mobile layouts, horizontal overflow, search filtering, category/product rendering, wishlist and cart counters, and product-detail switching. The page spec import was corrected; the repository-wide unit-test compile remains blocked by unrelated stale component names in ten existing spec files.
+
+### 2026-08-25 [CODEX] Replaced AkkuratPro fallback with bundled Inter typography
+
+- Area/files: Global typography, homepage hero, navbar, pillar/event carousel controls, package dependencies, and `src/assets/fonts/inter/LICENSE.txt`
+- Change: Selected Inter as the closest free fit for the site's corporate and ecommerce UI, bundled Latin weights 400–700 through `@fontsource/inter`, retained its SIL OFL licence in production assets, added premium tracking to the lead hero title, set hero copy to 1.6 line-height, refined desktop navigation alignment, standardized pillar badge insets, and aligned carousel arrows with the third-card edge.
+- Validation: Production build passed; verified generated Inter WOFF/WOFF2 assets, browser-confirmed Inter loading, exact header centre alignment, 18 px pillar badge insets, a 0.04 px arrow/card edge delta, deep-charcoal integrated-system heading, and overflow-free desktop/mobile layouts.
+
+### 2026-08-25 [CODEX] Added in-page product and event detail modals
+
+- Area/files: Consumer Wellness quick view, event carousel/data, application routes, and retired event-detail page
+- Change: Replaced the below-page product spotlight with a responsive quick-view modal; converted event cards from route links into accessible modal triggers; added three-image autoplay galleries with manual arrows, captions, dots, keyboard navigation, scroll locking, backdrop/Escape closing, and responsive layouts; removed the unused `/events/:id` route and its exclusive component files.
+- Validation: Production build passed; browser-tested desktop and 393 px mobile product/event modals, zero modal overflow, body scroll locking/restoration, unchanged URLs, automatic 4.5-second event slide advancement, manual previous/next controls, and close behavior.
+
+### 2026-08-25 [CODEX] Replaced Partner & Invest with Consulting & Innovation
+
+- Area/files: Consulting & Innovation company page, application routes, pillar 8 content, navbar and footer navigation
+- Change: Removed the former Partner & Invest component and rebuilt its destination as a premium Consulting & Innovation page using the supplied GCC/YEIKCA pitch deck as the content source. Positioned YEIKCA as one of six offerings alongside GCC research and validation, campus centres of excellence, faculty and student development, publication readiness, and institutional research partnerships. Removed the standalone desktop Partner & Invest menu item, added Consulting & Innovation under What We Do → Institutions and to the mobile/footer navigation, updated pillar 8, and retained the legacy URL as a redirect.
+- Validation: Production build passed. Verified the live tunnel in Chrome at desktop and 393 px width, including navigation labels and spacing, mega/mobile menus, six offering cards, six YEIKCA outcomes, six research areas, the offerings anchor, legacy redirect, responsive overflow, and an empty Chrome warning/error log.
+
+### 2026-08-25 [CODEX] Restored left-aligned desktop navigation
+
+- Area/files: Desktop navbar styles
+- Change: Left-aligned the four remaining primary menu options immediately after the logo while preserving the existing mobile navigation behavior.
+- Validation: Production build and live Chrome layout verification.

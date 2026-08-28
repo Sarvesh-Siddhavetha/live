@@ -1,74 +1,174 @@
-<app-hero
-  category="CONSUMER WELLNESS"
-  title="Feel the difference of the real thing."
-  description="Daily supplements, functional tonics, and women's formulations built on Siddha, made on our farm, proven by results."
-  buttonText="Shop Wellness"
-  image="assets/images/shop/consumer-wellness-hero.png">
-</app-hero>
+<div class="wellness-marketplace">
+  <section class="shop-utility" aria-label="Marketplace tools">
+    <div class="shop-utility__inner">
+      <button class="shop-departments" type="button" (click)="scrollTo('shop-categories')">
+        <span class="shop-departments__icon" aria-hidden="true">☰</span>
+        Shop categories
+      </button>
 
-<app-chips [chips]="categories"></app-chips>
+      <label class="shop-search">
+        <span class="sr-only">Search the Siddhavetha marketplace</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"></path></svg>
+        <input type="search" [(ngModel)]="searchTerm" placeholder="Search products, benefits or brands" aria-label="Search products, benefits or brands">
+      </label>
 
-<section class="products">
+      <div class="shop-actions">
+        <button type="button" class="shop-action" aria-label="View account">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+          <span>Account</span>
+        </button>
+        <button type="button" class="shop-action" (click)="scrollTo('marketplace-products')" aria-label="View wishlist">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.6-7.5a5.5 5.5 0 0 0 1.2-8.9Z"></path></svg>
+          <span>Wishlist</span>
+          <strong *ngIf="wishlistIds().length">{{ wishlistIds().length }}</strong>
+        </button>
+        <button type="button" class="shop-action shop-action--cart" aria-label="View shopping cart">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1"></circle><circle cx="19" cy="20" r="1"></circle><path d="M3 4h2l2.4 10.4A2 2 0 0 0 9.4 16h8.8a2 2 0 0 0 2-1.6L22 7H6"></path></svg>
+          <span>Cart</span>
+          <strong>{{ cartCount() }}</strong>
+        </button>
+      </div>
+    </div>
+  </section>
 
-    <div class="section-header">
-        <p>LEAD PRODUCTS</p>
-        <h2>Our Range</h2>
+  <nav class="shop-links" aria-label="Marketplace navigation">
+    <div class="shop-links__inner">
+      <button type="button" (click)="selectCategory('Daily wellness')">Wellness</button>
+      <button type="button" (click)="selectCategory('Women’s health')">Women’s health</button>
+      <button type="button" (click)="selectCategory('Skin & beauty')">Skin &amp; beauty</button>
+      <button type="button" (click)="selectCategory('Bath & body')">Bath &amp; body</button>
+      <button type="button" (click)="selectCategory('Organic home')">Organic home</button>
+      <button type="button" class="shop-links__partner" (click)="scrollTo('partner-marketplace')">Partner marketplace</button>
+    </div>
+  </nav>
+
+  <section class="commerce-hero" aria-labelledby="marketplace-title">
+    <div class="commerce-hero__main">
+      <img src="assets/images/shop/consumer-wellness-hero.png" alt="Siddhavetha botanical wellness products in a sunlit laboratory">
+      <div class="commerce-hero__overlay"></div>
+      <div class="commerce-hero__content">
+        <p class="eyebrow">Siddhavetha marketplace</p>
+        <h1 id="marketplace-title">Rooted in wisdom.<br>Chosen for real life.</h1>
+        <p>Discover Siddhavetha formulations and carefully selected organic products from trusted makers across India.</p>
+        <button type="button" class="primary-cta" (click)="scrollTo('marketplace-products')">Shop the collection <span aria-hidden="true">→</span></button>
+      </div>
     </div>
 
-    <div class="product-grid">
+    <aside class="commerce-hero__offer" aria-label="Marketplace promise">
+      <p class="eyebrow">Marketplace promise</p>
+      <h2>Every product earns its place.</h2>
+      <p>Origin, ingredients, quality and maker credentials are reviewed before a product reaches this marketplace.</p>
+      <button type="button" class="text-link" (click)="scrollTo('marketplace-standard')">See our standard →</button>
+      <div class="offer-seal" aria-hidden="true"><span>SV</span><small>VERIFIED</small></div>
+    </aside>
+  </section>
 
-    <app-product-card
-        category="HERBAL SERUM"
-        title="Ageless Elixir"
-        description="A potent botanical serum crafted with time-honored Siddha herbs to deeply nourish, restore radiance, and support naturally youthful skin."
-        price="₹1,299"
-        image="assets/images/shop/consumer-wellness-product1.png">
-    </app-product-card>
+  <section class="trust-strip" aria-label="Shopping benefits">
+    <div><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></svg><span><strong>Quality reviewed</strong>Ingredient and maker checks</span></div>
+    <div><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12h18M12 3v18"></path><circle cx="12" cy="12" r="9"></circle></svg><span><strong>Made in India</strong>Farmers and makers supported</span></div>
+    <div><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 6h13v11H3zM16 10h3l2 3v4h-5z"></path><circle cx="7" cy="19" r="2"></circle><circle cx="18" cy="19" r="2"></circle></svg><span><strong>Free delivery</strong>On marketplace orders over ₹999</span></div>
+    <div><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 7h-9M14 4l-3 3 3 3"></path><path d="M4 17h9M10 14l3 3-3 3"></path></svg><span><strong>Easy returns</strong>Simple 14-day support</span></div>
+  </section>
 
-    <app-product-card
-        category="WELLNESS RITUAL"
-        title="Bath Ritual Collection"
-        description="Transform your daily routine into a calming self-care ritual with handcrafted bath essentials infused with pure herbs and aromatic botanicals."
-        price="₹1,499"
-        image="assets/images/shop/consumer-wellness-product2.png">
-    </app-product-card>
+  <section class="category-section" id="shop-categories" aria-labelledby="category-title">
+    <div class="market-section-heading">
+      <div><p class="eyebrow">Find your ritual</p><h2 id="category-title">Shop by category</h2></div>
+      <button type="button" class="text-link" (click)="selectCategory('All products')">View all products →</button>
+    </div>
+    <div class="category-grid">
+      <button type="button" class="category-card" *ngFor="let category of categories" [class.is-active]="selectedCategory === category.name" [attr.aria-pressed]="selectedCategory === category.name" (click)="selectCategory(category.name)">
+        <span class="category-card__image"><img [src]="category.image" [alt]="category.name"></span>
+        <strong>{{ category.name }}</strong><small>{{ category.description }}</small>
+      </button>
+    </div>
+  </section>
 
-    <app-product-card
-        category="HANDMADE SOAP"
-        title="Artisan Herbal Soaps"
-        description="Handcrafted herbal soaps made with natural oils and plant extracts to gently cleanse, moisturize, and refresh every skin type."
-        price="₹599"
-        image="assets/images/shop/consumer-wellness-product3.png">
-    </app-product-card>
+  <section class="catalogue-section" id="marketplace-products" aria-labelledby="catalogue-title">
+    <div class="market-section-heading catalogue-heading">
+      <div>
+        <p class="eyebrow">Curated marketplace</p>
+        <h2 id="catalogue-title">Featured products</h2>
+        <p class="catalogue-summary">Siddhavetha originals and certified organic partner products, together in one trusted collection.</p>
+      </div>
+      <label class="sort-control"><span>Sort by</span><select [(ngModel)]="sortOption" aria-label="Sort products"><option value="featured">Featured</option><option value="rating">Top rated</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option></select></label>
+    </div>
 
+    <div class="active-filter" *ngIf="selectedCategory !== 'All products' || searchTerm"><span>Showing {{ filteredProducts.length }} result{{ filteredProducts.length === 1 ? '' : 's' }}</span><button type="button" (click)="clearFilters()">Clear filters ×</button></div>
+
+    <div class="product-catalogue" *ngIf="filteredProducts.length; else noProducts">
+      <article class="market-product" *ngFor="let product of filteredProducts; trackBy: trackByProduct">
+        <div class="market-product__media">
+          <img [src]="product.image" [alt]="product.name" loading="lazy">
+          <span class="product-badge" *ngIf="product.badge">{{ product.badge }}</span>
+          <button type="button" class="wishlist-button" [class.is-active]="isWishlisted(product.id)" [attr.aria-label]="(isWishlisted(product.id) ? 'Remove ' : 'Add ') + product.name + (isWishlisted(product.id) ? ' from wishlist' : ' to wishlist')" (click)="toggleWishlist(product.id)">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.6-7.5a5.5 5.5 0 0 0 1.2-8.9Z"></path></svg>
+          </button>
+          <button type="button" class="quick-view" (click)="showDetails(product)">Quick view</button>
+        </div>
+        <div class="market-product__body">
+          <div class="seller-line"><span [class.seller-line--partner]="product.sellerType === 'Certified Partner'">{{ product.sellerType }}</span><small>{{ product.brand }}</small></div>
+          <button type="button" class="product-title" (click)="showDetails(product)">{{ product.name }}</button>
+          <p class="product-format">{{ product.format }}</p>
+          <div class="rating" [attr.aria-label]="product.rating + ' out of 5 stars from ' + product.reviews + ' reviews'"><span aria-hidden="true">★★★★★</span><small>{{ product.rating }} ({{ product.reviews }})</small></div>
+          <div class="price-row"><strong>₹{{ product.price | number }}</strong><del *ngIf="product.originalPrice">₹{{ product.originalPrice | number }}</del><span *ngIf="product.originalPrice">{{ discount(product) }}% off</span></div>
+          <button type="button" class="add-cart" (click)="addToCart(product)">Add to cart <span aria-hidden="true">+</span></button>
+        </div>
+      </article>
+    </div>
+
+    <ng-template #noProducts><div class="empty-state"><h3>No products match your search.</h3><p>Try another phrase or clear the filters to explore the complete collection.</p><button type="button" class="primary-cta" (click)="clearFilters()">View all products</button></div></ng-template>
+  </section>
+
+  <div class="product-modal" *ngIf="spotlightProduct() as product" (click)="closeDetails()">
+    <section
+      class="product-spotlight product-modal__panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="spotlight-title"
+      (click)="$event.stopPropagation()">
+      <button type="button" class="modal-close" (click)="closeDetails()" aria-label="Close product quick view">×</button>
+      <div class="product-spotlight__gallery">
+        <div class="gallery-thumbnails" aria-hidden="true"><span><img [src]="product.image" alt=""></span><span class="gallery-detail">PURE<br>BOTANICALS</span><span class="gallery-detail">MADE<br>WITH CARE</span></div>
+        <div class="gallery-main"><img [src]="product.image" [alt]="product.name"></div>
+      </div>
+      <div class="product-spotlight__details">
+        <p class="breadcrumb">Marketplace / {{ product.category }}</p>
+        <span class="spotlight-seller">{{ product.sellerType }} · {{ product.brand }}</span>
+        <h2 id="spotlight-title">{{ product.name }}</h2>
+        <div class="rating spotlight-rating"><span aria-hidden="true">★★★★★</span><small>{{ product.rating }} · {{ product.reviews }} verified reviews</small></div>
+        <p class="spotlight-description">{{ product.description }}</p>
+        <div class="spotlight-price"><strong>₹{{ product.price | number }}</strong><del *ngIf="product.originalPrice">₹{{ product.originalPrice | number }}</del><span>Inclusive of all taxes</span></div>
+        <div class="offer-box"><strong>Marketplace offer</strong><span>Save 10% when you add any two wellness products.</span></div>
+        <div class="purchase-row">
+          <label><span>Quantity</span><select [(ngModel)]="spotlightQuantity"><option [ngValue]="1">1</option><option [ngValue]="2">2</option><option [ngValue]="3">3</option><option [ngValue]="4">4</option></select></label>
+          <button type="button" class="primary-cta purchase-button" (click)="addToCart(product, spotlightQuantity)">Add to cart</button>
+        </div>
+        <button type="button" class="buy-now" (click)="addToCart(product, spotlightQuantity)">Buy now</button>
+        <ul class="benefit-list"><li *ngFor="let benefit of product.benefits"><span aria-hidden="true">✓</span>{{ benefit }}</li></ul>
+        <details><summary>Ingredients &amp; product details</summary><p>Full ingredient, usage, batch and certification information will be available for every listed product.</p></details>
+        <details><summary>Delivery &amp; returns</summary><p>Delivered across India with simple support and returns on eligible unopened products.</p></details>
+      </div>
+    </section>
+  </div>
+
+  <section class="partner-marketplace" id="partner-marketplace" aria-labelledby="partner-title">
+    <div class="partner-marketplace__content">
+      <p class="eyebrow">More than our own products</p>
+      <h2 id="partner-title">A marketplace for trusted organic makers.</h2>
+      <p>Siddhavetha brings its own formulations together with products from organic farms, cooperatives and conscious brands. Every partner is reviewed against a shared marketplace standard.</p>
+      <div class="partner-stats"><div><strong>100%</strong><span>origin visible</span></div><div><strong>4-step</strong><span>partner review</span></div><div><strong>India-first</strong><span>maker network</span></div></div>
+      <button type="button" class="secondary-cta" (click)="selectCategory('Organic home')">Explore partner products</button>
+    </div>
+    <div class="partner-marketplace__image"><img src="assets/images/pillar-photos/01-green-amazon-marketplace.png" alt="Organic makers and natural products in the Siddhavetha marketplace" loading="lazy"></div>
+  </section>
+
+  <section class="marketplace-standard" id="marketplace-standard" aria-labelledby="standard-title">
+    <div class="market-section-heading"><div><p class="eyebrow">The Siddhavetha standard</p><h2 id="standard-title">Confidence in every choice.</h2></div></div>
+    <div class="standard-grid">
+      <article><span>01</span><h3>Authentic origin</h3><p>Clear maker, farm and sourcing information helps customers understand where each product begins.</p></article>
+      <article><span>02</span><h3>Ingredient clarity</h3><p>Transparent formulations and practical usage guidance make informed wellness choices easier.</p></article>
+      <article><span>03</span><h3>Quality review</h3><p>Siddhavetha products and partner listings follow defined checks for quality, consistency and responsibility.</p></article>
+      <article><span>04</span><h3>Conscious impact</h3><p>Preference is given to responsible materials, community value and lower-impact packaging.</p></article>
+    </div>
+  </section>
 </div>
-
-</section>
-
-<section class="why-made">
-
-    <div class="section-header">
-        <p>WHY IT MATTERS</p>
-        <h2>Where it's made matters.</h2>
-    </div>
-
-    <div class="feature-grid">
-
-        <app-feature-card
-            title="Farm to Formula"
-            description="Every product begins with carefully cultivated herbs grown using sustainable practices.">
-        </app-feature-card>
-
-        <app-feature-card
-            title="Authentic Siddha"
-            description="Traditional Siddha wisdom combined with modern scientific manufacturing.">
-        </app-feature-card>
-
-        <app-feature-card
-            title="Quality Assured"
-            description="Every batch is rigorously tested for purity, consistency, and safety.">
-        </app-feature-card>
-
-    </div>
-
-</section>

@@ -1,11 +1,13 @@
+@import '@fontsource/inter/latin-400.css';
+@import '@fontsource/inter/latin-500.css';
+@import '@fontsource/inter/latin-600.css';
+@import '@fontsource/inter/latin-700.css';
+
 /* Claude (Anthropic): substantially modified this file — Siddhavetha EY-style rebuild */
 /* You can add global styles to this file, and also import other style files */
 /* =====================================================
    SIDDHAVETHA GLOBAL DESIGN SYSTEM
 ===================================================== */
-
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* =====================================================
    ROOT VARIABLES
@@ -52,8 +54,8 @@
 
     /* Fonts */
 
-    --heading-font:'Fraunces', serif;
-    --body-font:'Poppins', sans-serif;
+    --heading-font:'Inter',Arial,Helvetica,sans-serif;
+    --body-font:'Inter',Arial,Helvetica,sans-serif;
 
     /* Border Radius */
 
@@ -98,13 +100,17 @@ body{
 
     font-family:var(--body-font);
 
+    font-size:16px;
+
+    font-weight:400;
+
     background:var(--background);
 
     color:var(--black);
 
     overflow-x:hidden;
 
-    line-height:1.7;
+    line-height:1.6;
 
 }
 
@@ -126,7 +132,7 @@ a{
 
 button{
 
-    font-family:inherit;
+    font-family:var(--heading-font);
 
     cursor:pointer;
 
@@ -139,51 +145,70 @@ button{
 h1,
 h2,
 h3,
-h4{
+h4,
+h5,
+h6{
 
     font-family:var(--heading-font);
 
     color:var(--black);
 
-    font-weight:600;
+    font-weight:700;
 
 }
 
 h1{
 
-    font-size:64px;
+    font-size:clamp(44px,5vw,64px);
 
-    line-height:1.1;
+    line-height:1.06;
+
+    letter-spacing:-.025em;
 
 }
 
 h2{
 
-    font-size:46px;
+    font-size:clamp(34px,3.4vw,44px);
 
-    line-height:1.2;
+    line-height:1.1;
+
+    letter-spacing:-.02em;
 
 }
 
 h3{
 
-    font-size:28px;
+    font-size:24px;
+
+    line-height:1.2;
 
 }
 
 h4{
 
-    font-size:22px;
+    font-size:20px;
+
+    line-height:1.25;
 
 }
 
 p{
 
-    font-size:17px;
+    font-size:16px;
 
     color:var(--dark-gray);
 
-    line-height:1.8;
+    line-height:1.65;
+
+}
+
+strong,
+b{
+
+    font-family:var(--heading-font);
+
+    font-weight:700;
 
 }
 
@@ -251,7 +276,7 @@ section{
 
 .section-header h2{
 
-    font-size:44px;
+    font-size:clamp(34px,3.4vw,44px);
 
 }
 

@@ -11,11 +11,10 @@ import { PreventiveHealthcareComponent } from './pages/institutions/Preventive-H
 import { DigitalComponent } from './pages/institutions/Digital/Digital';
 import { RetreatsComponent } from './pages/experience/retreats/retreats.component';
 import { TourismComponent } from './pages/experience/tourism/tourism.component';
-import { PartnerInvestComponent } from './pages/company/partner-invest/partner-invest';
+import { ConsultingInnovationComponent } from './pages/company/consulting-innovation/consulting-innovation';
 import { OurStoryComponent } from './pages/company/our-story/our-story';
 import { About } from './pages/about/about';
 import { Contact } from './pages/contact/contact';
-import { EventDetail } from './pages/events/event-detail/event-detail';
 import { InitiativeDetail } from './pages/initiatives/initiative-detail';
 export const routes: Routes = [
   {
@@ -109,8 +108,13 @@ export const routes: Routes = [
     component: TourismComponent
   },
   {
+    path: 'consulting-innovation',
+    component: ConsultingInnovationComponent
+  },
+  {
     path: 'partner-invest',
-    component: PartnerInvestComponent
+    redirectTo: 'consulting-innovation',
+    pathMatch: 'full'
   },
   {
     path: 'our-story',
@@ -124,8 +128,4 @@ export const routes: Routes = [
     path: 'contact',
     component: Contact
   },
-  {
-    path: 'events/:id',
-    component: EventDetail
-  }
 ];
