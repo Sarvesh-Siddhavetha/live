@@ -6,6 +6,7 @@
             class="feature-image"
             [src]="image || fallbackImage"
             [alt]="title || 'Feature image'"
+            loading="lazy"
             (error)="handleImageError($event)">
 
     </div>

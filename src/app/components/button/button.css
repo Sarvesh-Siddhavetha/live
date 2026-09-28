@@ -11,15 +11,15 @@ button{
 
     justify-content:center;
 
-    gap:8px;
+    gap: 7px;
 
-    padding:14px 28px;
+    padding: 12px 24px;
 
     border-radius:10px;
 
     font-family:var(--body-font);
 
-    font-size:15px;
+    font-size: 14px;
 
     font-weight:600;
 

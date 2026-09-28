@@ -3,7 +3,7 @@
 ========================================== */
 
 .why-made{
-    padding:80px 6%;
+    padding: 68px 6%;
     background:#ffffff;
 }
 
@@ -12,20 +12,20 @@
 ========================================== */
 
 .section-header{
-    margin-bottom:45px;
+    margin-bottom: 38px;
 }
 
 .section-header p{
-    font-size:12px;
+    font-size: 11px;
     letter-spacing:2px;
     text-transform:uppercase;
     color:#b6b6b6;
-    margin-bottom:10px;
+    margin-bottom: 8px;
     font-weight:500;
 }
 
 .section-header h2{
-    font-size:42px;
+    font-size: 38px;
     font-weight:600;
     color:#1f1f1f;
 }
@@ -37,7 +37,7 @@
 .feature-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:32px;
+    gap: 27px;
 }
 
 /* ==========================================
@@ -47,7 +47,7 @@
 .feature-wrapper{
     display:flex;
     flex-direction:column;
-    gap:22px;
+    gap: 19px;
 }
 
 /* ==========================================
@@ -65,7 +65,7 @@ app-feature-card{
 
 .membership-strip{
 
-    padding:70px 6%;
+    padding: 60px 6%;
 
     background:#f5f5f5;
 
@@ -79,7 +79,7 @@ app-feature-card{
 
     justify-content:space-between;
 
-    gap:30px;
+    gap: 26px;
 
     flex-wrap:wrap;
 
@@ -91,7 +91,7 @@ app-feature-card{
 
     align-items:center;
 
-    gap:15px;
+    gap: 13px;
 
     flex:1;
 
@@ -115,7 +115,7 @@ app-feature-card{
 
 .membership-item span{
 
-    font-size:16px;
+    font-size: 14px;
 
     color:#444;
 

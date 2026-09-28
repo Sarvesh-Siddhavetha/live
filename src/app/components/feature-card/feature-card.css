@@ -80,7 +80,7 @@
 
     flex-direction:column;
 
-    padding:28px;
+    padding: 24px;
 
 }
 
@@ -88,9 +88,9 @@
 
     display:inline-block;
 
-    margin-bottom:14px;
+    margin-bottom: 12px;
 
-    font-size:11px;
+    font-size: 10px;
 
     font-weight:600;
 
@@ -106,7 +106,7 @@
 
     font-family:var(--heading-font);
 
-    font-size:28px;
+    font-size: 25px;
 
     font-weight:600;
 
@@ -114,19 +114,19 @@
 
     line-height:1.25;
 
-    margin-bottom:16px;
+    margin-bottom: 14px;
 
 }
 
 .feature-card p{
 
-    font-size:16px;
+    font-size: 14px;
 
     line-height:1.8;
 
     color:var(--dark-gray);
 
-    margin-top:auto;
+    margin-top: auto;
 
 }
 

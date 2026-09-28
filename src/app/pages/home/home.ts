@@ -21,9 +21,12 @@ interface HeroSlide {
 export class Home implements OnInit, OnDestroy {
 
   activeHeroIndex = signal(0);
+  isPaused = signal(false);
 
   private heroTimer?: ReturnType<typeof setInterval>;
   private readonly heroIntervalMs = 6000;
+  private reduceMotion = false;
+  private hovering = false;
 
   heroSlides: HeroSlide[] = [
     {
@@ -49,16 +52,56 @@ export class Home implements OnInit, OnDestroy {
   events = EVENTS;
 
   ngOnInit(): void {
+    this.reduceMotion = typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    if (this.reduceMotion) {
+      this.isPaused.set(true);
+    }
+    this.syncAutoplay();
+  }
+
+  ngOnDestroy(): void {
+    this.stopAutoplay();
+  }
+
+  goToHeroSlide(index: number): void {
+    this.activeHeroIndex.set(index);
+  }
+
+  onHeroEnter(): void {
+    this.hovering = true;
+    this.syncAutoplay();
+  }
+
+  onHeroLeave(): void {
+    this.hovering = false;
+    this.syncAutoplay();
+  }
+
+  togglePause(): void {
+    this.isPaused.update(v => !v);
+    this.syncAutoplay();
+  }
+
+  private syncAutoplay(): void {
+    const shouldPlay = !this.reduceMotion && !this.isPaused() && !this.hovering;
+    if (shouldPlay) {
+      this.startAutoplay();
+    } else {
+      this.stopAutoplay();
+    }
+  }
+
+  private startAutoplay(): void {
+    this.stopAutoplay();
     this.heroTimer = setInterval(() => {
       this.activeHeroIndex.update(i => (i + 1) % this.heroSlides.length);
     }, this.heroIntervalMs);
   }
 
-  ngOnDestroy(): void {
-    if (this.heroTimer) clearInterval(this.heroTimer);
-  }
-
-  goToHeroSlide(index: number): void {
-    this.activeHeroIndex.set(index);
+  private stopAutoplay(): void {
+    if (this.heroTimer) {
+      clearInterval(this.heroTimer);
+      this.heroTimer = undefined;
+    }
   }
 }

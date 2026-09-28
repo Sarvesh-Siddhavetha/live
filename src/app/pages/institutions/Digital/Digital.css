@@ -3,24 +3,24 @@
 =========================== */
 
 .why-made{
-    padding:80px 6%;
+    padding: 68px 6%;
     background:#ffffff;
 }
 
 .section-header{
-    margin-bottom:45px;
+    margin-bottom: 38px;
 }
 
 .section-header p{
-    font-size:12px;
+    font-size: 11px;
     letter-spacing:2px;
     text-transform:uppercase;
     color:#b5b5b5;
-    margin-bottom:10px;
+    margin-bottom: 8px;
 }
 
 .section-header h2{
-    font-size:44px;
+    font-size: 40px;
     font-weight:600;
     color:#1f1f1f;
 }
@@ -35,9 +35,9 @@
 
     grid-template-columns:repeat(3,1fr);
 
-    gap:28px;
+    gap: 24px;
 
-    margin-bottom:40px;
+    margin-bottom: 34px;
 
 }
 

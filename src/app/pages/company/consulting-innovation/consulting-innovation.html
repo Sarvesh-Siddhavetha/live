@@ -1,150 +1,16 @@
 <article class="consulting-page">
-  <section class="consulting-hero" aria-labelledby="consulting-title">
-    <div class="hero-image" aria-hidden="true">
-      <img
-        src="assets/images/hero/siddhavetha-global-innovation-capability-centre.jpg"
-        alt=""
-        width="2048"
-        height="1152"
-        fetchpriority="high">
-    </div>
-
-    <div class="hero-shade" aria-hidden="true"></div>
-
-    <div class="hero-content">
-      <p class="eyebrow">Pillar 08 · Consulting &amp; Innovation</p>
-      <h1 id="consulting-title">Turn indigenous knowledge into evidence the world can use.</h1>
-      <p class="hero-copy">
-        Siddhavetha’s Global Capability Center connects ancient wisdom with modern research,
-        creating credible pathways to publication, education, innovation and global careers.
-      </p>
-
-      <div class="hero-actions">
-        <a class="action action--primary" routerLink="/consulting-innovation" fragment="offerings">Explore our offerings <span aria-hidden="true">↓</span></a>
-        <a class="action action--outline" routerLink="/contact">Bring GCC to your campus <span aria-hidden="true">↗</span></a>
-      </div>
-    </div>
-
-    <div class="hero-proof" aria-label="Core capabilities">
-      <span>Transdisciplinary</span>
-      <span>Research-led</span>
-      <span>Globally connected</span>
-    </div>
-  </section>
-
-  <section class="intro-section">
-    <div class="section-shell intro-grid">
-      <div>
-        <p class="section-kicker">A capability centre for translation</p>
-        <h2>Modern science.<br>Ancient wisdom.</h2>
-      </div>
-
-      <div class="intro-copy">
-        <p class="intro-lead">
-          We help institutions, researchers and young minds turn India’s indigenous knowledge
-          into globally relevant research, careers, curricula and products.
-        </p>
-        <p>
-          Rather than competing with existing institutes, we complement them — bringing mentors,
-          methods, validation pathways, conferences and journals into one connected ecosystem.
-        </p>
-      </div>
-    </div>
-
-    <div class="section-shell opportunity-grid" aria-label="Why this capability matters">
-      <div class="opportunity-card">
-        <span>01</span>
-        <h3>Indigenous roots</h3>
-        <p>Teachings of the Siddhars and India’s living knowledge traditions, reframed for a modern scientific era.</p>
-      </div>
-      <div class="opportunity-card">
-        <span>02</span>
-        <h3>Transdisciplinary method</h3>
-        <p>One research ecosystem spanning science, sustainability, health, education and society.</p>
-      </div>
-      <div class="opportunity-card">
-        <span>03</span>
-        <h3>Global network</h3>
-        <p>Mentors, indexed journals and international conferences connecting India’s knowledge to the world.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="model-section">
-    <div class="section-shell">
-      <div class="section-heading section-heading--split">
-        <div>
-          <p class="section-kicker section-kicker--light">Our model</p>
-          <h2>From knowledge to the global stage.</h2>
-        </div>
-        <p>The same evidence pipeline powers our consulting engagements, institutional programs and student research.</p>
-      </div>
-
-      <ol class="model-flow">
-        <li>
-          <span class="flow-number">01</span>
-          <div>
-            <h3>Community &amp; indigenous knowledge</h3>
-            <p>Knowledge held by elders and communities across India’s traditions.</p>
-          </div>
-        </li>
-        <li>
-          <span class="flow-number">02</span>
-          <div>
-            <h3>GCC research &amp; validation</h3>
-            <p>Documentation, method, testing and validation with consent and named custodians.</p>
-          </div>
-        </li>
-        <li>
-          <span class="flow-number">03</span>
-          <div>
-            <h3>Global stage</h3>
-            <p>Peer-reviewed papers, conference presentations, curricula and products.</p>
-          </div>
-        </li>
-      </ol>
-
-      <p class="model-note">Two tracks, one body of knowledge: hard knowledge becomes products; soft knowledge becomes curriculum.</p>
-    </div>
-  </section>
-
-  <section id="offerings" class="offerings-section">
-    <div class="section-shell">
-      <div class="section-heading">
-        <p class="section-kicker">Consulting &amp; innovation portfolio</p>
-        <h2>Six ways we build capability.</h2>
-        <p>YEIKCA is one offering within a broader platform for institutional research, education and innovation.</p>
-      </div>
-
-      <div class="offerings-grid">
-        @for (offering of offerings; track offering.index) {
-          <article class="offering-card">
-            <div class="offering-topline">
-              <span>{{ offering.index }}</span>
-              @if (offering.index === '02') {
-                <small>Featured program</small>
-              }
-            </div>
-            <h3>{{ offering.title }}</h3>
-            <p>{{ offering.description }}</p>
-            <p class="offering-detail">{{ offering.detail }}</p>
-          </article>
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class="yeikca-section" aria-labelledby="yeikca-title">
+  <section class="yeikca-hero" id="outcomes" aria-labelledby="yeikca-title">
     <div class="section-shell yeikca-layout">
       <div class="yeikca-feature">
         <p class="section-kicker">Featured offering</p>
-        <p class="yeikca-name">YEIKCA</p>
+        <h1 class="yeikca-name">YEIKCA</h1>
         <h2 id="yeikca-title">Youth Empowerment, Indigenous Knowledge &amp; Career Accelerator</h2>
-        <p>
+        <p class="yeikca-description">
           A mentor-led program that equips aspiring researchers with foundations in academic
           research, writing and presentation, alongside life management, conscious living and
           social entrepreneurship.
         </p>
+
         <div class="delivery-tags" aria-label="Delivery modes">
           <span>Live online</span>
           <span>Recorded learning</span>
@@ -153,10 +19,56 @@
         </div>
       </div>
 
-      <div class="outcomes-grid">
+      <div class="outcomes-grid" aria-label="YEIKCA outcomes">
         @for (outcome of yeikcaOutcomes; track outcome.title) {
-          <article class="outcome-card">
-            <h3>{{ outcome.title }}</h3>
+          <article class="outcome-card" [style.--outcome-accent]="outcome.accent">
+            <div class="outcome-card__header">
+              <span class="outcome-icon" aria-hidden="true">
+                @switch (outcome.icon) {
+                  @case ('research') {
+                    <svg viewBox="0 0 48 48" role="img">
+                      <path d="M12 14 24 9l12 5-12 5-12-5Z" />
+                      <path d="M16 17v6c0 4 3.6 7 8 7s8-3 8-7v-6M36 15v9" />
+                      <circle cx="24" cy="27" r="5" />
+                      <path d="M14 40c1.5-6 5-9 10-9s8.5 3 10 9" />
+                    </svg>
+                  }
+                  @case ('brain') {
+                    <svg viewBox="0 0 48 48" role="img">
+                      <path d="M23 12c-1-4-7-4-9 0-4 0-5 6-2 8-4 3-2 9 2 9-1 5 5 8 9 4V12Z" />
+                      <path d="M25 12c1-4 7-4 9 0 4 0 5 6 2 8 4 3 2 9-2 9 1 5-5 8-9 4V12Z" />
+                      <path d="M18 16c-3 1-4 4-2 6m3 3c-3 0-5 2-5 4m16-13c3 1 4 4 2 6m-3 3c3 0 5 2 5 4" />
+                    </svg>
+                  }
+                  @case ('publish') {
+                    <svg viewBox="0 0 48 48" role="img">
+                      <path d="M12 8h15l8 8v10M27 8v9h8" />
+                      <path d="M27 37 38 26l4 4-11 11-7 2 3-6Z" />
+                      <path d="M24 40H12V8" />
+                    </svg>
+                  }
+                  @case ('patent') {
+                    <svg viewBox="0 0 48 48" role="img">
+                      <path d="M15 21a9 9 0 1 1 16 6c-2 2-3 4-3 7h-8c0-3-1-5-3-7a9 9 0 0 1-2-6Z" />
+                      <path d="M20 38h8m-7 4h6M21 17c1-3 5-4 8-2" />
+                    </svg>
+                  }
+                  @case ('scientists') {
+                    <svg viewBox="0 0 48 48" role="img">
+                      <path d="m17 18 7 6 7-6 8 7-9 10-6-4-6 4-9-10 8-7Z" />
+                      <path d="m19 20-6 7m16-7 6 7M7 20h5v15H7zm29 0h5v15h-5z" />
+                    </svg>
+                  }
+                  @case ('leaf') {
+                    <svg viewBox="0 0 48 48" role="img">
+                      <path d="M10 35c0-15 10-23 29-22-1 18-10 25-22 21" />
+                      <path d="M11 39c4-10 12-16 23-20" />
+                    </svg>
+                  }
+                }
+              </span>
+              <h3>{{ outcome.title }}</h3>
+            </div>
             <p>{{ outcome.description }}</p>
           </article>
         }
@@ -164,143 +76,254 @@
     </div>
   </section>
 
-  <section class="program-section">
-    <div class="section-shell">
-      <div class="section-heading section-heading--split">
-        <div>
-          <p class="section-kicker">Research pathways</p>
-          <h2>Progress from first method to continued publication.</h2>
-        </div>
-        <p>Mentor-led original research, co-authored, published and presented on the global stage.</p>
-      </div>
-
-      <div class="program-grid">
-        <article class="program-card">
-          <span class="program-level">Basic</span>
-          <h3>Introductory Research Program</h3>
-          <dl>
-            <div><dt>Mode</dt><dd>Online · live + recorded</dd></div>
-            <div><dt>Prerequisite</dt><dd>None</dd></div>
-          </dl>
-          <p>Research methodology, literature review and academic writing; co-author an abstract and present it.</p>
-        </article>
-
-        <article class="program-card program-card--accent">
-          <span class="program-level">Advanced</span>
-          <h3>Advanced Research Program</h3>
-          <dl>
-            <div><dt>Duration</dt><dd>6–9 months</dd></div>
-            <div><dt>Includes</dt><dd>Basic program</dd></div>
-          </dl>
-          <p>Develop publishable, co-authored research; present at conferences and publish in indexed journals.</p>
-        </article>
-
-        <article class="program-card">
-          <span class="program-level">Extended</span>
-          <h3>Continued Research Program</h3>
-          <dl>
-            <div><dt>For</dt><dd>Advanced alumni</dd></div>
-            <div><dt>Structure</dt><dd>Month to month</dd></div>
-          </dl>
-          <p>Continue publishing additional papers with ongoing mentorship and research guidance.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="research-section">
-    <div class="section-shell research-layout">
-      <div class="research-intro">
-        <p class="section-kicker section-kicker--light">Publication-grade biomedical science</p>
-        <h2>Areas of research</h2>
-        <p>Modern computational and biological methods applied to medicinal plants, natural products and human health.</p>
-      </div>
-
-      <div class="research-list">
-        @for (area of researchAreas; track area.title; let i = $index) {
-          <article>
-            <span>{{ (i + 1).toString().padStart(2, '0') }}</span>
-            <div>
-              <h3>{{ area.title }}</h3>
-              <p>{{ area.description }}</p>
-            </div>
-          </article>
+  <div class="page-body">
+    <aside class="page-sidebar">
+      <div class="sidebar-panel sidebar-facts" aria-label="YEIKCA at a glance">
+        <p class="sidebar-panel__title">At a glance</p>
+        @for (fact of quickFacts; track fact.label) {
+          <div class="sidebar-fact">
+            <span class="sidebar-fact__value">{{ fact.value }}</span>
+            <span class="sidebar-fact__label">{{ fact.label }}</span>
+          </div>
         }
       </div>
-    </div>
-  </section>
 
-  <section class="proof-section">
-    <div class="section-shell">
-      <div class="section-heading">
-        <p class="section-kicker">Proven outcomes</p>
-        <h2>Not a promise — a record.</h2>
-        <p>Student work has already reached peer-reviewed journals and international scientific conferences.</p>
-      </div>
+      <nav class="sidebar-nav" aria-label="Jump to a section">
+        @for (item of pageNav; track item.id) {
+          <a
+            [href]="'/consulting-innovation#' + item.id"
+            [class.active]="activeSection() === item.id"
+            [attr.aria-current]="activeSection() === item.id ? 'true' : null"
+            (click)="jumpToSection(item.id, $event)">
+            {{ item.label }}
+          </a>
+        }
+      </nav>
+    </aside>
 
-      <div class="proof-grid">
-        <div><strong>13</strong><span>student researchers</span></div>
-        <div><strong>12+</strong><span>conference abstracts</span></div>
-        <div><strong>Q1</strong><span>journal ambition</span></div>
-        <div><strong>Global</strong><span>conference readiness</span></div>
-      </div>
+    <div class="page-main">
+      <section class="program-section" id="tracks" aria-labelledby="research-tracks-title">
+        <header class="research-tracks-heading">
+          <h2 id="research-tracks-title"><span>Research</span> tracks</h2>
+          <p>Mentor-led original research — co-authored and published.</p>
+        </header>
 
-      <div class="publication-row" aria-label="Publication and presentation destinations">
-        <span>Biophysical Journal · Cell Press</span>
-        <span>International Journal of Molecular Sciences</span>
-        <span>Journal of Translational Medicine</span>
-        <span>American College of Lifestyle Medicine</span>
-      </div>
-    </div>
-  </section>
+        <div class="research-track-grid">
+          <article class="research-track-card" style="--track-accent: #f18732">
+            <span class="track-label">Basic</span>
+            <h3>Introductory Research Program</h3>
+            <dl>
+              <div><dt>Mode</dt><dd>Online, Live+Rec.</dd></div>
+              <div><dt>Prereq.</dt><dd>None</dd></div>
+            </dl>
+            <p>Research methodology, literature review and academic writing; co-author an abstract and present it.</p>
+          </article>
 
-  <section class="partner-section">
-    <div class="section-shell partner-layout">
-      <div class="partner-image">
-        <img
-          src="assets/images/pillar-photos/08-innovation-consulting-social-innovation.png"
-          alt="Siddhavetha researchers and community partners collaborating around a project table"
-          width="1536"
-          height="1024"
-          loading="lazy">
-      </div>
+          <article class="research-track-card" style="--track-accent: #102f68">
+            <span class="track-label">Advanced</span>
+            <h3>Advanced Research Program</h3>
+            <dl>
+              <div><dt>Duration</dt><dd>6–9 months</dd></div>
+              <div><dt>Includes</dt><dd>Basic program</dd></div>
+            </dl>
+            <p>Publishable, co-authored research; present at conferences and publish in indexed journals.</p>
+          </article>
 
-      <div class="partner-content">
-        <p class="section-kicker">For institutions</p>
-        <h2>Partner with GCC at your campus.</h2>
-        <p>
-          Create a centre of excellence with research mentorship, learning resources,
-          scholarships, internships and pathways to publication and global presentation.
-        </p>
-
-        <ol class="partner-steps">
-          <li><span>01</span><div><strong>Your institution leads</strong><p>Define the student, faculty or institutional research opportunity.</p></div></li>
-          <li><span>02</span><div><strong>GCC brings the pipeline</strong><p>Access mentors, methods, validation and publication guidance.</p></div></li>
-          <li><span>03</span><div><strong>Together, take it global</strong><p>Build toward translational outcomes, patents, papers and conferences.</p></div></li>
-        </ol>
-
-        <p class="funding-note">
-          Eligible Tamil Nadu government higher-education partners may be able to use the Chief Minister’s
-          Research Grant pathway, with Siddhavetha Global Innovations participating as industry Co-PI.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="closing-section">
-    <div class="section-shell closing-layout">
-      <div>
-        <p class="section-kicker section-kicker--light">Open to the world</p>
-        <h2>Bring research, publication and innovation to your campus.</h2>
-      </div>
-      <div class="closing-contact">
-        <p>Start a conversation about GCC, YEIKCA or an institutional research partnership.</p>
-        <a class="action action--primary" routerLink="/contact">Contact Siddhavetha <span aria-hidden="true">↗</span></a>
-        <div class="contact-lines">
-          <a href="tel:+919842509702">+91 98425 09702</a>
-          <a href="mailto:info@siddhavethamultiversity.org">info&#64;siddhavethamultiversity.org</a>
+          <article class="research-track-card" style="--track-accent: #91d317">
+            <span class="track-label">Extended</span>
+            <h3>Extended Research Program</h3>
+            <dl>
+              <div><dt>For</dt><dd>Advanced alumni</dd></div>
+              <div><dt>Billing</dt><dd>Monthly</dd></div>
+            </dl>
+            <p>Keep publishing — additional papers with continued mentorship, billed month to month.</p>
+          </article>
         </div>
-      </div>
+
+        <p class="research-track-note"><strong>Advanced includes Basic.</strong> Upgrade Basic → Advanced within one month of registration and the Basic fee is credited; after that, the full Advanced fee applies.</p>
+
+        <div class="training-program" id="curriculum" aria-labelledby="training-title">
+          <h3 id="training-title"><span>Training</span> Program</h3>
+
+          <div class="training-tabs" role="tablist" aria-label="Choose a training track">
+            <button
+              type="button"
+              role="tab"
+              [attr.aria-selected]="activeTrainingTab() === 'student'"
+              [class.active]="activeTrainingTab() === 'student'"
+              (click)="setTrainingTab('student')">
+              Student Track
+            </button>
+            <button
+              type="button"
+              role="tab"
+              [attr.aria-selected]="activeTrainingTab() === 'faculty'"
+              [class.active]="activeTrainingTab() === 'faculty'"
+              (click)="setTrainingTab('faculty')">
+              Faculty Track
+            </button>
+          </div>
+
+          @if (activeTrainingTab() === 'student') {
+            <div class="training-track training-track--student" role="tabpanel">
+              <p class="training-intro">A lecture-based certification pathway — building the foundations before students move into original research.</p>
+
+              <div class="student-levels">
+                <article class="training-level" style="--level-accent: #f18732">
+                  <strong>1</strong><h4>Level 1</h4>
+                  <p class="level-duration">3-hour certification course</p>
+                  <p>A short, guided introduction to research thinking.</p>
+                </article>
+                <article class="training-level" style="--level-accent: #102b66">
+                  <strong>2</strong><h4>Level 2</h4>
+                  <p class="level-duration">45 hours over 3 months</p>
+                  <p>A full certification with a mentored mini-project.</p>
+                </article>
+                <article class="training-level" style="--level-accent: #91d317">
+                  <strong>3</strong><h4>Level 3</h4>
+                  <p class="level-duration">90–180 hours over 6–12 months</p>
+                  <p>Advanced training with guided project and presentation skills.</p>
+                </article>
+              </div>
+            </div>
+          } @else {
+            <div class="training-track training-track--faculty" role="tabpanel">
+              <p class="training-intro">Training for educators in research, innovation, AI, ethics and Indigenous knowledge.</p>
+
+              <div class="faculty-levels">
+                <article class="training-level" style="--level-accent: #f18732">
+                  <strong>1</strong><h4>Level 1</h4>
+                  <p class="level-duration">3-hour Intensive certification</p>
+                  <p class="level-award">Faculty Excellence Intensive</p>
+                </article>
+                <article class="training-level" style="--level-accent: #91d317">
+                  <strong>2</strong><h4>Level 2</h4>
+                  <p class="level-duration">45 hour Comprehensive Program</p>
+                  <p class="level-award">Advanced Certificate</p>
+                </article>
+              </div>
+            </div>
+          }
+
+          <p class="training-fees"><strong>India certificate rates.</strong> Minimum enrolment of 50 students per batch. Fees cover certification; delivered at your campus or online.</p>
+        </div>
+      </section>
+
+      <section class="research-section" id="research-areas" aria-labelledby="research-areas-title">
+        <header class="content-heading">
+          <p class="section-kicker">Publication-grade biomedical science</p>
+          <h2 id="research-areas-title"><span>Areas</span> of research</h2>
+        </header>
+
+        <div class="research-grid">
+          @for (area of researchAreas; track area.title) {
+            <article class="research-card" [style.--area-accent]="area.accent">
+              <span class="research-icon" aria-hidden="true">
+                @switch (area.icon) {
+                  @case ('code') {
+                    <svg viewBox="0 0 48 48"><path d="M8 12h32v23H8zM5 39h38M19 20l-5 4 5 4m10-8 5 4-5 4m-4-10-3 12" /></svg>
+                  }
+                  @case ('network') {
+                    <svg viewBox="0 0 48 48"><rect x="7" y="12" width="14" height="10" rx="3"/><rect x="27" y="12" width="14" height="10" rx="3"/><rect x="18" y="29" width="14" height="10" rx="3"/><path d="M21 17h6M16 22l7 7m9-7-7 7" /></svg>
+                  }
+                  @case ('brain') {
+                    <svg viewBox="0 0 48 48"><path d="M23 12c-1-4-7-4-9 0-4 0-5 6-2 8-4 3-2 9 2 9-1 5 5 8 9 4V12Zm2 0c1-4 7-4 9 0 4 0 5 6 2 8 4 3 2 9-2 9 1 5-5 8-9 4V12Z" /></svg>
+                  }
+                  @case ('oncology') {
+                    <svg viewBox="0 0 48 48"><path d="M18 8c4 7 8 9 12 16s0 12-6 16M30 8c-4 7-8 9-12 16s0 12 6 16M16 14h16M14 26h20M18 36h12" /></svg>
+                  }
+                  @case ('disease') {
+                    <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="10"/><path d="M24 5v7m0 24v7M5 24h7m24 0h7M11 11l5 5m16 16 5 5M37 11l-5 5M16 32l-5 5M21 22h.1m8 3h.1m-7 5h.1" /></svg>
+                  }
+                  @case ('flask') {
+                    <svg viewBox="0 0 48 48"><path d="M18 7h12M20 7v13L10 38c-1 2 1 4 3 4h22c2 0 4-2 3-4L28 20V7M16 31h16" /></svg>
+                  }
+                }
+              </span>
+              <div><h3>{{ area.title }}</h3><p>{{ area.description }}</p></div>
+            </article>
+          }
+        </div>
+      </section>
+
+      <section class="publication-section" id="proof" aria-labelledby="publication-title">
+        <header class="content-heading content-heading--wide">
+          <h2 id="publication-title"><span>Where</span> our students publish &amp; present</h2>
+          <p>Our students’ work already reaches peer-reviewed journals and international scientific conferences.</p>
+        </header>
+
+        <div class="publication-body">
+          <div class="publication-logowall" aria-label="Journals and conferences reached by student work">
+            <span class="pub-chip">Biophysical Journal <em>(Cell Press)</em></span>
+            <span class="pub-chip">Int. J. of Molecular Sciences <em>(MDPI)</em></span>
+            <span class="pub-chip">J. of Translational Medicine <em>(Springer Nature)</em></span>
+            <span class="pub-chip">American College of Lifestyle Medicine</span>
+            <span class="pub-chip">Life Science Congress 2025</span>
+            <span class="pub-chip">ISEF &amp; University of South Florida</span>
+          </div>
+
+          <ul class="publication-stats" aria-label="Publication record">
+            <li><strong>13 student researchers</strong></li>
+            <li>12+ conference abstracts</li>
+            <li>peer-reviewed publication</li>
+            <li>Springer Nature submissions</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="international-section" id="community" aria-labelledby="international-title">
+        <header class="international-heading"><h2 id="international-title"><span>A special welcome</span> to international students</h2></header>
+        <div class="international-layout">
+          <article class="fee-highlight">
+            <span class="highlight-globe" aria-hidden="true">◎</span>
+            <p class="section-kicker section-kicker--light">International student benefit</p>
+            <h3>Research Publication Fee Concession</h3>
+            <p>International students receive a concession on research publication fees — lowering the cost of getting published in global journals.</p>
+          </article>
+          <div class="international-benefits">
+            <article><span>01</span><div><h3>Global cohort</h3><p>Students from North America, the Middle East, the Indian sub-continent and beyond study together.</p></div></article>
+            <article><span>02</span><div><h3>Present anywhere</h3><p>Abstracts and papers built to global conference standards.</p></div></article>
+            <article><span>03</span><div><h3>Recognised credentials</h3><p>Conscious Global Citizen status and publishable, portable research.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="campus-section" aria-labelledby="campus-title">
+        <header class="content-heading"><h2 id="campus-title"><span>Partner</span> with us at your campus</h2></header>
+        <div class="campus-grid">
+          <article style="--campus-accent: #f18732"><span class="campus-icon">01</span><div><h3>E-Library &amp; Webinars</h3><p>Unlimited SVM E-Library access, free webinars and online workshops.</p></div></article>
+          <article style="--campus-accent: #91d317"><span class="campus-icon">02</span><div><h3>Scholarships &amp; Internships</h3><p>10 research scholarships (Rs 3,000 each) and internship training every year.</p></div></article>
+          <article style="--campus-accent: #102b66"><span class="campus-icon">03</span><div><h3>Placement &amp; Careers</h3><p>Resume-building, networking and career-fair guidance for students.</p></div></article>
+          <article style="--campus-accent: #087bc3"><span class="campus-icon">04</span><div><h3>Institutional Branding</h3><p>Conference keynotes, awards, ambassador and visiting-faculty positions.</p></div></article>
+        </div>
+      </section>
+
+      <section class="faculty-section" id="faculty" aria-labelledby="faculty-title">
+        <div class="faculty-heading">
+          <h2 id="faculty-title"><span>Faculty</span> &amp; Mentors</h2>
+          <p>A transdisciplinary faculty of scientists, physicians, engineers and traditional-knowledge experts — supported by the SVM India Wing.</p>
+        </div>
+
+        <div class="faculty-grid">
+          @for (mentor of mentors; track mentor.name) {
+            <article class="mentor-card">
+              <div class="mentor-photo">
+                <img
+                  [src]="mentor.image"
+                  [alt]="mentor.name"
+                  width="320"
+                  height="320"
+                  loading="lazy">
+              </div>
+              <div class="mentor-content">
+                <h3>{{ mentor.name }}</h3>
+                <p class="mentor-credential">{{ mentor.credential }}</p>
+                <p class="mentor-role">{{ mentor.role }}</p>
+              </div>
+            </article>
+          }
+        </div>
+      </section>
     </div>
-  </section>
+  </div>
 </article>

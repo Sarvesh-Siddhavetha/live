@@ -3,7 +3,12 @@
      HERO
 ========================================== -->
 
-<section class="hero">
+<section
+    class="hero"
+    (mouseenter)="onHeroEnter()"
+    (mouseleave)="onHeroLeave()"
+    (focusin)="onHeroEnter()"
+    (focusout)="onHeroLeave()">
 
     <div class="hero-slides">
 
@@ -51,9 +56,22 @@
                     [class.active]="i === activeHeroIndex()"
                     (click)="goToHeroSlide(i)"
                     [attr.aria-label]="'Show slide ' + (i + 1)">
+                    <span class="hero-dot-mark" aria-hidden="true"></span>
                 </button>
 
             }
+
+            <button
+                type="button"
+                class="hero-pause-toggle"
+                (click)="togglePause()"
+                [attr.aria-label]="isPaused() ? 'Play slideshow' : 'Pause slideshow'">
+                @if (isPaused()) {
+                    <svg width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden="true"><path d="M1 1L9 6L1 11V1Z" fill="currentColor"/></svg>
+                } @else {
+                    <svg width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden="true"><rect x="1" y="1" width="2.6" height="10" fill="currentColor"/><rect x="6.4" y="1" width="2.6" height="10" fill="currentColor"/></svg>
+                }
+            </button>
 
         </div>
 

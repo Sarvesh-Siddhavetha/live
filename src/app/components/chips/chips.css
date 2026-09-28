@@ -6,7 +6,7 @@
 
     width:100%;
 
-    padding:30px 60px;
+    padding: 26px 51px;
 
     background:var(--section-bg);
 
@@ -24,7 +24,7 @@
 
     max-width:1400px;
 
-    margin:auto;
+    margin: auto;
 
     display:flex;
 
@@ -32,7 +32,7 @@
 
     align-items:center;
 
-    gap:16px;
+    gap: 14px;
 
 }
 
@@ -48,7 +48,7 @@
 
     justify-content:center;
 
-    padding:12px 24px;
+    padding: 10px 20px;
 
     background:#ffffff;
 
@@ -60,7 +60,7 @@
 
     font-family:var(--body-font);
 
-    font-size:14px;
+    font-size: 13px;
 
     font-weight:500;
 
