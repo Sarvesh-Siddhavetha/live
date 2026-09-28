@@ -14,7 +14,7 @@ import { ButtonComponent } from '../../../components/button/button';
     FeatureCardComponent,
     ButtonComponent
   ],
-  templateUrl: './preventive-healthcare.html',
+  templateUrl: './Preventive-Healthcare.html',
   styleUrl: './Preventive-Healthcare.css'
 })
 export class PreventiveHealthcareComponent {
